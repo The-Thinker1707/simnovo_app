@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>EduConnect — Home</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/homepage.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header" role="banner">
+      <div class="brand">
+        <div class="logo">EC</div>
+        <div>
+          <div class="h1">EduConnect</div>
+          <div class="h2">Professional school portal — connect teachers, parents & students</div>
+        </div>
+      </div>
+
+      <nav style="display:flex;align-items:center;gap:10px">
+        <div id="liveDatetime" class="h2 small" aria-live="polite"></div>
+        <a class="back-button" href="/portal.html">Login</a>
+        <a class="back-button" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO (clean & ordered) -->
+    <section class="card" style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:center">
+      <div>
+        <h1 style="margin:0 0 8px 0">Welcome to EduConnect</h1>
+        <p class="h2" style="margin:0 0 14px 0">A single professional portal for school administration, teachers, parents and pupils. Use the Login button to open the portal and pick your role.</p>
+        <div style="display:flex;gap:10px">
+          <a class="back-button" href="/portal.html">Open Portal</a>
+          <a class="back-button" href="#features">Explore features</a>
+        </div>
+
+        <div style="margin-top:14px" class="small">Demo login — teacher@example.com / teach123 · parent@example.com / parent123 · student@example.com / student123</div>
+      </div>
+
+      <div>
+        <div class="card" style="padding:12px;text-align:center">
+          <h3 style="margin:0 0 6px 0">Quick Snapshot</h3>
+          <canvas id="homeSpark" style="width:100%;height:90px"></canvas>
+          <div style="display:flex;gap:8px;justify-content:space-between;margin-top:10px">
+            <div><strong class="enh-counter" data-to="128">0</strong><div class="small">Teachers</div></div>
+            <div><strong class="enh-counter" data-to="1420">0</strong><div class="small">Students</div></div>
+            <div><strong class="enh-counter" data-to="320">0</strong><div class="small">Parents</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES (ordered) -->
+    <section id="features" class="card" style="margin-top:16px">
+      <h2 style="margin:0 0 10px 0">Core features</h2>
+      <div class="subcards">
+        <div class="subcard">
+          <h3>Teachers & Admin</h3>
+          <ul class="small">
+            <li>Lesson plans & resources</li>
+            <li>Staff directory & contacts</li>
+            <li>Professional development</li>
+            <li>Policies, results & fee management</li>
+          </ul>
+          <a class="back-button" href="/teacher.html">Open Teacher area</a>
+        </div>
+
+        <div class="subcard">
+          <h3>Students</h3>
+          <ul class="small">
+            <li>Homework & deadlines</li>
+            <li>Timetable & attendance</li>
+            <li>Clubs & activities</li>
+            <li>Online learning resources</li>
+          </ul>
+          <a class="back-button" href="/student.html">Open Student area</a>
+        </div>
+
+        <div class="subcard">
+          <h3>Parents / Guardians</h3>
+          <ul class="small">
+            <li>Child progress & term results</li>
+            <li>Announcements & PTA info</li>
+            <li>Complaints & communications</li>
+            <li>Fees overview</li>
+          </ul>
+          <a class="back-button" href="/parent.html">Open Parent area</a>
+        </div>
+
+        <div class="subcard">
+          <h3>General</h3>
+          <ul class="small">
+            <li>School history & mission</li>
+            <li>Contact & map</li>
+            <li>FAQs & support</li>
+          </ul>
+          <a class="back-button" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick actions -->
+    <section class="card" style="margin-top:16px;display:grid;grid-template-columns:1fr 320px;gap:12px">
+      <div>
+        <h3 style="margin:0">Quick actions</h3>
+        <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap">
+          <div class="card" style="min-width:200px;">
+            <h4 style="margin:0">View timetable</h4>
+            <p class="small">Personalised timetable after login.</p>
+            <a class="back-button" href="/student-home.html">Open</a>
+          </div>
+          <div class="card" style="min-width:200px;">
+            <h4 style="margin:0">Check results</h4>
+            <p class="small">Teachers & parents can view results.</p>
+            <a class="back-button" href="/teacher-lesson-plans.html">Results</a>
+          </div>
+          <div class="card" style="min-width:200px;">
+            <h4 style="margin:0">Fees & notices</h4>
+            <p class="small">Overview of outstanding fees.</p>
+            <a class="back-button" href="/parent-announcements.html">Notices</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h4 style="margin:0">Contact</h4>
+        <p class="small" style="margin:6px 0 10px 0">info@educonnect.com</p>
+        <a class="back-button" href="/portal.html">Portal / Login</a>
+      </aside>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:16px">
+      <h3 style="margin:0">Contact & FAQs</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+        <div>
+          <div class="faq small"><strong>Reset password</strong><div class="small">Use Forgot Password on login or contact admin.</div></div>
+          <div class="faq small" style="margin-top:8px"><strong>Term calendar</strong><div class="small">Open Student Calendar from Portal.</div></div>
+        </div>
+        <div>
+          <h4 style="margin:0">Request demo</h4>
+          <form onsubmit="event.preventDefault(); alert('Demo request sent - admin will contact you.');" style="margin-top:8px">
+            <input class="input" placeholder="Your name" required>
+            <input class="input" placeholder="Email" required>
+            <textarea class="input" placeholder="Message" required></textarea>
+            <div style="margin-top:8px"><button class="back-button" type="submit">Send</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer card" style="margin-top:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>© EduConnect 2025</div>
+        <div class="small">Professional, secure & clean</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/home-enhancements.js" defer></script>
+  <script src="/homepage.js" defer></script>
+</body>
+</html>

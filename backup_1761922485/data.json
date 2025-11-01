@@ -1,0 +1,35 @@
+{
+  "users": [
+    {"email":"teacher@example.com","password":"teach123","role":"teacher","name":"Ms. Ada Teacher"},
+    {"email":"parent@example.com","password":"parent123","role":"parent","name":"Mr. Parent","childId":"student-1"},
+    {"email":"student@example.com","password":"student123","role":"student","name":"John Student","studentId":"student-1"}
+  ],
+  "announcements":[
+    {"id":1,"title":"Term 3 starts","body":"Term 3 begins on Monday, please check timetables."},
+    {"id":2,"title":"PTA Meeting","body":"PTA meeting Friday 3pm in Hall."}
+  ],
+  "staff":[
+    {"name":"Ms. Ada Teacher","email":"teacher@example.com","role":"Head of Math"},
+    {"name":"Mr. Ben Staff","email":"ben.staff@example.com","role":"Counselor"}
+  ],
+  "timetables":{
+    "student-1":[
+      {"day":"Mon","time":"08:00 - 09:00","subject":"Math"},
+      {"day":"Mon","time":"09:15 - 10:00","subject":"English"},
+      {"day":"Tue","time":"10:15 - 11:00","subject":"Science"}
+    ]
+  },
+  "homework":{
+    "student-1":[
+      {"id":"hw-1","title":"Math: Algebra worksheet","due":"2025-11-07"},
+      {"id":"hw-2","title":"English: Read Chapter 4","due":"2025-11-09"}
+    ]
+  },
+  "results":{
+    "student-1":[
+      {"term":"Term 1 2025","subjects":[{"name":"Math","grade":"A"},{"name":"English","grade":"B+"}]},
+      {"term":"Term 2 2025","subjects":[{"name":"Math","grade":"A-"},{"name":"English","grade":"A"}]}
+    ]
+  },
+  "complaints":[]
+}

@@ -1,0 +1,20 @@
+body {
+  font-family: Inter, sans-serif;
+  background: #eef6ff;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=60');
+  background-size: cover;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+.card { background: #ffffffcc; margin: 10px 0; padding: 15px; border-radius: 10px; }
+input, button { padding: 10px; margin-top: 8px; border-radius: 6px; border: 1px solid #ccc; width: 100%; }
+button { background: #0b76d1; color: white; border: none; font-weight: bold; }
+button:hover { background: #095a9a; }
+a { color: #0b76d1; text-decoration: none; }
+a:hover { text-decoration: underline; }

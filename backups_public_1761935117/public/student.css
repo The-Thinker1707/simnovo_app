@@ -1,0 +1,11 @@
+/* student.css - lighter student style */
+:root{--accent:#0b76d1;--bg:#ffffff;--muted:#6b7280}
+body{background:var(--bg);font-family:Inter,system-ui,Arial}
+.app{max-width:1000px;margin:14px auto;padding:12px}
+.card{background:white;border-radius:10px;padding:12px;box-shadow:0 6px 16px rgba(11,118,209,0.04)}
+.logo{width:48px;height:48px;border-radius:10px;color:white;display:flex;align-items:center;justify-content:center;font-weight:700}
+.h1{font-size:18px}
+.h2{font-size:13px;color:var(--muted)}
+.input{padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
+.nav-back{position:fixed;left:12px;bottom:12px}
+.panel{display:none}

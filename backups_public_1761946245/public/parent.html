@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Parent Dashboard</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<div class="container">
+<header class="header"><div class="brand"><div class="logo">EDUCONNECT</div></div><nav class="top-nav"><a href="/portal.html">Portal</a><a class="cta" href="/auth/logout">Logout</a></nav></header>
+<main>
+<div class="grid-2">
+<div class="card">
+<h3>Student Progress</h3>
+<div id="progress" class="note">View term results, attendance, and activities.</div>
+</div>
+<div class="card">
+<h3>Complaints & Feedback</h3>
+<form id="complaint-form" style="display:grid;gap:8px">
+<input name="title" placeholder="Title" required/>
+<textarea name="message" placeholder="Your message"></textarea>
+<button type="submit" class="small">Send</button>
+</form>
+</div>
+</div>
+
+<div style="margin-top:16px" class="grid-2">
+<div class="card">
+<h3>School News & PTA</h3>
+<div id="news" class="note">Latest announcements and PTA updates.</div>
+</div>
+<div class="card">
+<h3>Parent Resources</h3>
+<div class="note">Access parenting tips, policies, and school guidelines.</div>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>

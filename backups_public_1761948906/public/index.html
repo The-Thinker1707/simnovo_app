@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EduConnect — Professional school portal</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="brand">
+        <div class="logo">EDUCONNECT</div>
+        <div>
+          <div style="font-weight:900;font-size:15px">Professional school portal</div>
+          <div style="font-size:13px;color:var(--muted)">Unified portal for Teachers, Parents and Students — now vivid & interactive</div>
+        </div>
+      </div>
+
+      <nav class="top-nav" role="navigation" aria-label="Main">
+        <a href="/portal.html">Portal</a>
+        <a href="/portal.html" class="cta">Sign In</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-card" role="region" aria-labelledby="hero-title">
+        <div class="hero-accent" aria-hidden="true"></div>
+        <h1 id="hero-title" class="h-title">A living, colorful campus platform — fast, secure and delightful</h1>
+        <p class="h-lead">EduConnect consolidates student data, learning resources, assessments and campus life into a single, beautiful experience — designed for scale.</p>
+
+        <div class="stats" aria-hidden="false">
+          <div class="stat">
+            <div class="label">Active users</div>
+            <div class="value" id="s-users"><span class="skeleton" style="display:inline-block;height:20px;width:60px;border-radius:6px"></span></div>
+          </div>
+          <div class="stat">
+            <div class="label">Announcements</div>
+            <div class="value" id="s-ann"><span class="skeleton" style="display:inline-block;height:20px;width:30px;border-radius:6px"></span></div>
+          </div>
+          <div class="stat">
+            <div class="label">Resources</div>
+            <div class="value" id="s-lessons"><span class="skeleton" style="display:inline-block;height:20px;width:40px;border-radius:6px"></span></div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap">
+          <a href="/portal.html" class="cta ripple" onclick="ripple(event)" style="padding:10px 16px;border-radius:10px;">Open Portal</a>
+          <a href="#features" class="ripple" onclick="ripple(event)" style="padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(9,30,40,0.04);text-decoration:none;color:var(--muted)">Explore features</a>
+          <span class="badge purple">Campus-grade</span>
+          <span class="badge gold">48 Departments</span>
+        </div>
+      </div>
+
+      <aside class="side-column" aria-label="Quick">
+        <div class="dept-card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:800;color:var(--muted)">Departments</div>
+            <div class="dept-count" id="dept-count">48</div>
+          </div>
+          <div style="margin-top:10px;color:var(--muted);font-size:13px">Organize faculties, labs, and centers. Permissions and audit logs included.</div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:800;color:var(--muted)">Institution Overview</div>
+          <div style="margin-top:8px;color:var(--muted);font-size:13px">Admin controls, backup snapshots, and secure storage.</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" style="margin-top:28px" aria-labelledby="features-title">
+      <h2 id="features-title" style="margin:0 0 14px 0;font-weight:900">Key features — colorful, interactive & enterprise-ready</h2>
+
+      <div class="features" role="list">
+        <!-- Each card uses data-accent 1..6 (colors) to create a lively mosaic -->
+        <a class="feature-card reveal" data-accent="1" href="/teacher.html" role="listitem" title="View the dashboard">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">
+              <!-- dashboard icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.18"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.28"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.28"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.22"/></svg>
+            </div>
+            <div>
+              <div class="feature-title">Unified Dashboard</div>
+              <div class="feature-desc">Personalized KPIs and widgets per role.</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="2" href="/admin.html" role="listitem" title="Student records and profiles">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- user icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill="currentColor" opacity="0.24"/><path d="M3 20a8 8 0 0 1 18 0" fill="currentColor" opacity="0.18"/></svg>
+            </div>
+            <div><div class="feature-title">Student Records</div><div class="feature-desc">Complete profiles, guardians & documents.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="3" href="/teacher.html" role="listitem" title="Learning materials">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- book icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div><div class="feature-title">Learning Resources</div><div class="feature-desc">Upload lessons, link media & assignments.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="4" href="/teacher.html" role="listitem" title="Assessments">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- chart icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 20v-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M10 20v-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div><div class="feature-title">Assessments & Analytics</div><div class="feature-desc">Grade entry, exports and trend analysis.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="5" href="/student.html" role="listitem" title="Timetables">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- calendar icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" fill="currentColor" opacity="0.06"/></svg>
+            </div>
+            <div><div class="feature-title">Timetables</div><div class="feature-desc">Share schedules across classrooms and departments.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="6" href="/admin.html" role="listitem" title="Fees and billing">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- wallet icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="12" rx="2" fill="currentColor" opacity="0.06"/></svg>
+            </div>
+            <div><div class="feature-title">Billing & Fees</div><div class="feature-desc">Invoices, receipts and payment tracking.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="1" href="/library.html" role="listitem" title="Library catalog">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- library icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6 20V6" stroke="currentColor" stroke-width="1.2"/></svg>
+            </div>
+            <div><div class="feature-title">Library</div><div class="feature-desc">Digital catalog, lending and curated lists.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="2" href="/events.html" role="listitem" title="Events & clubs">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- star icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.3L20 10l-4 3.9L17 19l-5-2.7L7 19l1-5.1L4 10l5.4-1.7L12 3z" fill="currentColor" opacity="0.12"/></svg>
+            </div>
+            <div><div class="feature-title">Events & Campus Life</div><div class="feature-desc">Calendars, RSVPs and community features.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="3" href="/portal.html" role="listitem" title="Messaging">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- message icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor" opacity="0.06"/></svg>
+            </div>
+            <div><div class="feature-title">Messaging</div><div class="feature-desc">Announcements, DMs and notifications.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="4" href="/staff.html" role="listitem" title="Staff directory">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- directory icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 6h16" stroke="currentColor" stroke-width="1.2"/><path d="M4 12h16" stroke="currentColor" stroke-width="1.2"/></svg>
+            </div>
+            <div><div class="feature-title">Staff Directory</div><div class="feature-desc">Find staff by role, department and expertise.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="5" href="/admin.html" role="listitem" title="Security & compliance">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- shield icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3.6 9.7-7 11-3.4-1.3-7-6-7-11V7l7-4z" fill="currentColor" opacity="0.08"/></svg>
+            </div>
+            <div><div class="feature-title">Security & Compliance</div><div class="feature-desc">RBAC, logs and encrypted storage.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="6" href="/admin.html" role="listitem" title="Integrations">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- puzzle icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M10 10h4v4h-4z" fill="currentColor" opacity="0.06"/></svg>
+            </div>
+            <div><div class="feature-title">Integrations</div><div class="feature-desc">SIS, SSO, payment gateways and more.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="1" href="/portal.html" role="listitem" title="Mobile readiness">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- phone icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" fill="currentColor" opacity="0.06"/></svg>
+            </div>
+            <div><div class="feature-title">Mobile-first</div><div class="feature-desc">Responsive UI and native-app-ready APIs.</div></div>
+          </div>
+        </a>
+
+        <a class="feature-card reveal" data-accent="2" href="/portal.html" role="listitem" title="Support & training">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- help icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.04"/></svg>
+            </div>
+            <div><div class="feature-title">Support & Training</div><div class="feature-desc">Docs, training sessions and priority support.</div></div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section style="margin-top:30px">
+      <h3 style="margin:0 0 8px 0;font-weight:800">Latest announcements</h3>
+      <div class="card">
+        <ul id="announcements" style="margin:0;padding-left:18px;color:var(--muted)">
+          <!-- skeleton rows until loaded -->
+          <li style="margin-bottom:10px"><div class="skeleton" style="height:16px;width:40%;border-radius:6px"></div><div class="skeleton" style="height:12px;width:70%;margin-top:8px;border-radius:6px"></div></li>
+          <li style="margin-bottom:10px"><div class="skeleton" style="height:16px;width:35%;border-radius:6px"></div><div class="skeleton" style="height:12px;width:60%;margin-top:8px;border-radius:6px"></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer style="margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between">
+      <div>© EduConnect • 2025</div>
+      <div style="color:var(--muted)">Built for institutional scale — colorful and interactive</div>
+    </footer>
+  </div>
+
+  <script>
+    // Utility: ripple effect for buttons
+    function ripple(e){
+      const el = e.currentTarget;
+      const rect = el.getBoundingClientRect();
+      const r = Math.max(rect.width, rect.height);
+      const circle = document.createElement('span');
+      circle.style.width = circle.style.height = r + 'px';
+      circle.style.left = (e.clientX - rect.left - r/2) + 'px';
+      circle.style.top = (e.clientY - rect.top - r/2) + 'px';
+      circle.style.position = 'absolute';
+      circle.style.borderRadius = '50%';
+      circle.style.transform = 'scale(0)';
+      circle.style.background = 'rgba(255,255,255,0.18)';
+      circle.style.opacity = '0.9';
+      circle.style.pointerEvents = 'none';
+      circle.style.transition = 'transform .6s cubic-bezier(.2,.9,.3,1), opacity .9s';
+      el.style.position = 'relative';
+      el.appendChild(circle);
+      requestAnimationFrame(()=> circle.style.transform = 'scale(1)'); 
+      setTimeout(()=> { circle.style.opacity = '0'; setTimeout(()=> el.removeChild(circle), 900); }, 220);
+    }
+
+    // Count-up animation
+    function countUp(el, target, duration=900){
+      const start = 0;
+      const startTime = performance.now();
+      function frame(now){
+        const t = Math.min(1, (now - startTime) / duration);
+        const eased = t<0.5 ? 2*t*t : -1 + (4-2*t)*t; // easeInOutQuad approx
+        el.textContent = Math.round(start + (target - start) * eased);
+        if(t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.addEventListener('DOMContentLoaded', function(){
+      // attach observers for reveal
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
+
+      // fetch analytics
+      (async ()=>{
+        try{
+          const r = await fetch('/api/analytics');
+          if(r.ok){
+            const d = await r.json();
+            const users = d.totals?.users ?? 0;
+            const anns = d.totals?.announcements ?? 0;
+            const lessons = d.totals?.lessons ?? 0;
+            // animate counts
+            const elUsers = document.getElementById('s-users');
+            const elAnns = document.getElementById('s-ann');
+            const elLessons = document.getElementById('s-lessons');
+            elUsers.textContent = '0';
+            elAnns.textContent = '0';
+            elLessons.textContent = '0';
+            countUp(elUsers, users, 900);
+            countUp(elAnns, anns, 700);
+            countUp(elLessons, lessons, 700);
+          }
+        }catch(e){
+          console.warn('analytics error', e);
+        }
+      })();
+
+      // fetch announcements, replace skeletons
+      (async ()=>{
+        try{
+          const a = await fetch('/api/announcements');
+          if(a.ok){
+            const anns = await a.json();
+            const ul = document.getElementById('announcements');
+            ul.innerHTML = '';
+            if(!anns || anns.length === 0){
+              ul.innerHTML = '<li style="color:var(--muted)">No announcements</li>';
+            } else {
+              anns.forEach(x=>{
+                const li = document.createElement('li');
+                li.style.marginBottom = '12px';
+                const t = document.createElement('div'); t.style.fontWeight='800'; t.textContent = x.title || '';
+                const b = document.createElement('div'); b.style.color='var(--muted)'; b.textContent = x.body || '';
+                li.appendChild(t); li.appendChild(b);
+                ul.appendChild(li);
+              });
+            }
+          }
+        }catch(e){
+          console.warn('ann error', e);
+        }
+      })();
+
+      // small hint: animate feature icons on hover (CSS handles it) and tooltip via title attribute works
+    });
+  </script>
+</body>
+</html>

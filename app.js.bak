@@ -1,0 +1,83 @@
+require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
+const app = express();
+app.use(bodyParser.json());
+
+const JWT_SECRET = process.env.JWT_SECRET || 'devsecret';
+const PORT = process.env.PORT || 3000;
+
+// In-memory demo users (hashed passwords)
+const users = [
+  { id:1, email:'admin@example.com', password_hash: bcrypt.hashSync('admin123',8), role:'admin', full_name:'School Admin' },
+  { id:2, email:'teacher@example.com', password_hash: bcrypt.hashSync('teach123',8), role:'teacher', full_name:'Ms Teacher' },
+  { id:3, email:'parent@example.com', password_hash: bcrypt.hashSync('parent123',8), role:'parent', full_name:'Parent One' },
+  { id:4, email:'student@example.com', password_hash: bcrypt.hashSync('student123',8), role:'student', full_name:'Pupil One' }
+];
+
+function signToken(user) {
+  return jwt.sign({ id: user.id, role: user.role, name: user.full_name }, JWT_SECRET, { expiresIn: '8h' });
+}
+
+// Login -> returns JWT
+app.post('/api/auth/login', (req, res) => {
+  try {
+    const { email, password } = req.body || {};
+    if (!email || !password) return res.status(400).json({ error: 'email & password required' });
+    const user = users.find(u => u.email === email);
+    if (!user) return res.status(401).json({ error: 'invalid credentials' });
+    if (!bcrypt.compareSync(password, user.password_hash)) return res.status(401).json({ error: 'invalid credentials' });
+    const token = signToken(user);
+    return res.json({ token });
+  } catch (err) {
+    console.error('Login error:', err && err.stack ? err.stack : err);
+    return res.status(500).json({ error: 'Internal Server Error', detail: String(err) });
+  }
+});
+
+// Auth middleware
+function authMiddleware(req, res, next) {
+  try {
+    const h = req.headers.authorization || '';
+    if (!h) return res.status(401).json({ error: 'no token' });
+    const parts = h.split(' ');
+    if (parts.length !== 2) return res.status(401).json({ error: 'malformed token' });
+    const token = parts[1];
+    const payload = jwt.verify(token, JWT_SECRET);
+    req.user = payload;
+    next();
+  } catch (err) {
+    console.error('Auth middleware error:', err && err.stack ? err.stack : err);
+    return res.status(401).json({ error: 'invalid token', detail: String(err) });
+  }
+}
+
+function requireRole(...roles) {
+  return (req, res, next) => {
+    if (!req.user) return res.status(401).json({ error: 'unauthorized' });
+    if (!roles.includes(req.user.role)) return res.status(403).json({ error: 'forbidden' });
+    next();
+  };
+}
+
+// Role-aware dashboard (protected)
+app.get('/api/dashboard', authMiddleware, (req, res) => {
+  const role = req.user.role;
+  if (role === 'teacher') return res.json({ msg: `Hello teacher ${req.user.name}`, widgets: ['lesson-plans','class-list','enter-results'] });
+  if (role === 'parent') return res.json({ msg: `Hello parent ${req.user.name}`, widgets: ['child-progress','announcements','fees'] });
+  if (role === 'student') return res.json({ msg: `Hello student ${req.user.name}`, widgets: ['timetable','homework','books'] });
+  return res.json({ msg: `Hello ${req.user.name}`, widgets: ['admin-panel'] });
+});
+
+// public health
+app.get('/', (req, res) => res.send('EMS JWT demo running'));
+
+// debug: list demo users (only in dev) - not for production
+app.get('/_internal/users', (req, res) => {
+  res.json(users.map(u => ({ id: u.id, email: u.email, role: u.role, full_name: u.full_name })));
+});
+
+app.listen(PORT, '0.0.0.0', () => console.log(`EMS JWT demo running on :${PORT}`));

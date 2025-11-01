@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Teacher — EduConnect</title><link rel="stylesheet" href="/styles.css" /></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><div class="logo">EDUCONNECT</div></div><nav class="top-nav"><a href="/auth/logout">Logout</a></nav></header>
+    <h3>Teacher</h3>
+
+    <div class="card">
+      <h3>Announcements</h3>
+      <ul id="ann-list" class="note" style="color:var(--muted)"></ul>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="card">
+      <h3>Analytics Snapshot</h3>
+      <canvas id="chart-perf" width="300" height="180"></canvas>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="card">
+      <h3>Lessons & Resources</h3>
+      <form id="lesson-form" style="display:grid;gap:8px">
+        <input name="title" placeholder="Lesson title" required />
+        <input name="resource" placeholder="Resource URL" />
+        <button type="submit">Add Lesson</button>
+      </form>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="card">
+      <h3>Results Entry</h3>
+      <form id="result-form" style="display:grid;gap:8px">
+        <input name="studentId" placeholder="Student ID (s-1)" required/>
+        <input name="term" placeholder="Term (e.g. Term 3 2025)" required/>
+        <input name="subject" placeholder="Subject" required/>
+        <input name="grade" placeholder="Grade" required/>
+        <button type="submit" class="small">Save Result</button>
+      </form>
+      <div id="results-list" style="margin-top:10px;color:var(--muted)"></div>
+    </div>
+
+  </div>
+
+  <script>
+    async function loadAnnouncements(){
+      try{
+        const r = await fetch('/api/announcements');
+        if(r.ok){
+          const a = await r.json();
+          const ul = document.getElementById('ann-list');
+          ul.innerHTML = '';
+          (a||[]).forEach(x=>{
+            const li = document.createElement('li');
+            li.textContent = x.title + ' — ' + (x.body||'');
+            ul.appendChild(li);
+          });
+        }
+      }catch(e){}
+    }
+    document.addEventListener('DOMContentLoaded', loadAnnouncements);
+
+    document.getElementById('result-form').addEventListener('submit', async function(ev){
+      ev.preventDefault();
+      const fd = new FormData(this);
+      const body = {
+        studentId: fd.get('studentId'),
+        term: fd.get('term'),
+        subject: fd.get('subject'),
+        grade: fd.get('grade')
+      };
+      const res = await fetch('/api/teacher/results', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+      if(res.ok){ alert('Result saved'); this.reset(); }
+      else { alert('Save failed'); }
+    });
+
+    document.getElementById('lesson-form').addEventListener('submit', async function(ev){
+      ev.preventDefault();
+      const fd = new FormData(this);
+      const body = { title: fd.get('title'), resource: fd.get('resource') };
+      const r = await fetch('/api/lessons', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+      if(r.ok){ alert('Lesson added'); this.reset(); }
+      else { alert('Failed'); }
+    });
+  </script>
+</body>
+</html>

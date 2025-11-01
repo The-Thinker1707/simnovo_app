@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parenting Resources - EduConnect</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Parenting Resources & Tips</h1>
+  <div id="datetime"></div>
+</header>
+
+<section class="section content">
+  <ul>
+    <li>How to support your child's learning</li>
+    <li>Healthy routines and study schedules</li>
+    <li>Guidelines for online safety</li>
+    <li>Parent-teacher collaboration tips</li>
+  </ul>
+</section>
+
+<a class="back-button" href="parent-dashboard.html">Back</a>
+<footer>© EduConnect 2025</footer>
+
+<script>
+function updateDateTime() {
+  document.getElementById("datetime").innerText = new Date().toLocaleString();
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+</body>
+</html>

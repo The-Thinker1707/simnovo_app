@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMS Prototype</title>
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+}
+h1 { margin-bottom: 20px; color: #333; }
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  background: #6C63FF;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button:hover { background: #5548c8; }
+.message { margin-top: 15px; font-weight: bold; color: green; }
+.error { color: red; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>EMS Login</h1>
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<div id="msg" class="message"></div>
+</div>
+<script>
+async function login() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const msgDiv = document.getElementById('msg');
+  msgDiv.textContent = '';
+  msgDiv.classList.remove('error');
+
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (res.ok) {
+      msgDiv.textContent = data.message;
+      msgDiv.classList.remove('error');
+    } else {
+      msgDiv.textContent = data.error;
+      msgDiv.classList.add('error');
+    }
+  } catch(err) {
+    msgDiv.textContent = 'Server error';
+    msgDiv.classList.add('error');
+  }
+}
+</script>
+</body>
+</html>

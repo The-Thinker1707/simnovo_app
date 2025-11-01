@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>EduConnect — Professional school portal</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">EDUCONNECT</div>
+        <div style="line-height:1">
+          <div style="font-weight:900">EduConnect</div>
+          <div style="font-size:13px;color:var(--muted)">Professional school portal</div>
+        </div>
+      </div>
+      <nav class="top-nav"><a href="/portal.html" class="cta">Portal Login</a></nav>
+    </header>
+
+    <section class="hero-card reveal" aria-label="Hero">
+      <div class="hero-inner">
+        <div class="hero-text">A unified digital experience for Teachers, Parents and Pupils</div>
+
+        <div class="hero-subcard">
+          <!-- The subcard below the hero text — clickable and acts as a card with gradient overlay -->
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <div style="font-weight:800">EduConnect — your school's digital hub</div>
+            <div>
+              <a href="/portal.html" class="hero-btn">Portal Login</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top:6px">
+          <a href="/portal.html" class="hero-btn">Open Portal</a>
+        </div>
+      </div>
+    </section>
+
+    <h3 style="margin-top:20px;font-weight:900">Quick actions</h3>
+    <div class="quick-row">
+      <div class="quick-card" onclick="location.href='/portal.html'"><h4>View Results</h4><p>Open the portal to check term progress and reports.</p></div>
+      <div class="quick-card" onclick="location.href='/portal.html'"><h4>Check Timetable</h4><p>View class schedule, exam timetables and room assignments.</p></div>
+      <div class="quick-card" onclick="location.href='/portal.html'"><h4>School Announcements</h4><p>Latest notices and events for the school community.</p></div>
+      <div class="quick-card" onclick="location.href='/portal.html'"><h4>Contact Support</h4><p>Help center and contact details for administrative support.</p></div>
+    </div>
+
+    <footer style="margin-top:28px;color:var(--muted);font-size:13px">© EduConnect • 2025</footer>
+  </div>
+
+<script>
+const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }) }, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

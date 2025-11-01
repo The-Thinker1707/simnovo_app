@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Teacher Dashboard — EduConnect</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/teacher.css">
+</head><body>
+<div class="app">
+  <header class="header"><div class="brand"><div class="logo" style="background:linear-gradient(135deg,#062a5b,#0b76d1)">T</div><div><div class="h1">Teacher Dashboard</div><div class="h2 small">Executive view</div></div></div><nav style="gap:8px"><a class="back-button nav-back" href="#">Back</a> <a class="back-button" href="/index.html">Home</a></nav></header>
+
+  <section style="display:grid;grid-template-columns:300px 1fr;gap:12px;margin-top:12px">
+    <aside class="card" style="padding:14px">
+      <h4 style="margin:0">Profile</h4>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+        <img id="teacher-photo" src="/teacher-staff.png" alt="photo" style="width:72px;height:72px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.06)">
+        <div><div style="font-weight:700">Ms Teacher</div><div class="small">Maths • Senior</div></div>
+      </div>
+      <div style="margin-top:8px">
+        <input class="input profile-upload" data-preview="#teacher-photo" type="file" accept="image/*">
+      </div>
+      <div style="margin-top:12px">
+        <div class="small"><strong>Email</strong><div>teacher@example.com</div></div>
+        <div class="small" style="margin-top:6px"><strong>ID</strong><div>TEA-0002</div></div>
+      </div>
+    </aside>
+
+    <main>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="card" href="/teacher-lesson-plans.html" style="text-decoration:none;color:inherit;min-width:220px">
+          <h4 style="margin:0">Lesson Plans & Resources</h4>
+          <p class="small">Create & share teaching materials</p>
+        </a>
+
+        <a class="card" href="/teacher-gradebook.html" style="text-decoration:none;color:inherit;min-width:220px">
+          <h4 style="margin:0">Gradebook & Results</h4>
+          <p class="small">Enter scores & publish results</p>
+        </a>
+
+        <a class="card" href="/teacher-staff.html" style="text-decoration:none;color:inherit;min-width:220px">
+          <h4 style="margin:0">Staff Directory</h4>
+          <p class="small">Contacts & departments</p>
+        </a>
+
+        <a class="card" href="/teacher-policies.html" style="text-decoration:none;color:inherit;min-width:220px">
+          <h4 style="margin:0">Policies & Procedures</h4>
+          <p class="small">School policies & docs</p>
+        </a>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3 style="margin:0">Quick actions</h3>
+        <p class="small" style="margin-top:6px">Click any card to open a dedicated page. The dashboard remains static while you work.</p>
+      </div>
+    </main>
+  </section>
+
+  <footer class="footer card" style="margin-top:12px">© EduConnect 2025</footer>
+</div>
+
+<script src="/dashboard-common.js" defer></script>
+</body></html>

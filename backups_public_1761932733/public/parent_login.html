@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parent Login - EduConnect</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container mt-5">
+  <button class="btn btn-secondary mb-3" onclick="window.location='index.html'">Back to Roles</button>
+  <h2 class="mb-4 text-center">Parent / Guardian Login</h2>
+  <form id="parent-login-form">
+    <div class="mb-3">
+      <label for="parentEmail" class="form-label">Email</label>
+      <input type="email" class="form-control" id="parentEmail" required>
+    </div>
+    <div class="mb-3">
+      <label for="parentPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="parentPassword" required>
+    </div>
+    <button type="submit" class="btn btn-success">Login</button>
+  </form>
+  <div id="parent-login-msg" class="mt-3 text-danger"></div>
+</div>
+
+<footer class="text-center mt-5 mb-3">&copy; 2025 EduConnect</footer>
+
+<script>
+const parents = [
+  {email: 'parent1@example.com', password: 'parent123'}
+];
+
+document.getElementById('parent-login-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const email = document.getElementById('parentEmail').value;
+  const pw = document.getElementById('parentPassword').value;
+  const user = parents.find(u => u.email === email && u.password === pw);
+  if(user){
+    window.location='parent.html';
+  } else {
+    document.getElementById('parent-login-msg').textContent='Invalid Email or Password';
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

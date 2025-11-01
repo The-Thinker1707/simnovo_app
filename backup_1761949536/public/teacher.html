@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Teacher | EduConnect</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><div class="logo">EDU</div><div><div style="font-weight:800">EduConnect</div><div style="font-size:12px;color:#57606a">Teacher area</div></div></div><nav class="nav"><a href="/portal.html">Logout</a></nav></header>
+    <main style="margin-top:18px">
+      <div class="section-panel"><h2>Teacher Dashboard</h2><div id="overview"></div></div>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+
+<script>
+async function load(){
+  const r = await fetch('/api/teacher/overview');
+  if(r.status===401){ document.getElementById('overview').innerHTML='<p>Please <a href="/portal.html">login</a> as a teacher.</p>'; return; }
+  const data=await r.json();
+  document.getElementById('overview').innerHTML = `
+    <h3>Announcements</h3>
+    <ul>${data.announcements.map(a=>`<li><strong>${a.title}</strong> — ${a.body}</li>`).join('')}</ul>
+    <h3>Staff</h3>
+    <ul>${data.staff.map(s=>`<li>${s.name} — ${s.role} (${s.email})</li>`).join('')}</ul>
+    <h3>Quick actions</h3>
+    <ul><li><a href="/portal.html">Open Markbook</a></li></ul>
+  `;
+}
+load();
+</script>
+</body></html>

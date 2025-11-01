@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EduConnect — Portal</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="brand"><div class="logo">EDUCONNECT</div></div>
+    <nav class="top-nav"><a href="#features">Features</a><a class="cta" href="/portal.html">Portal Login</a></nav>
+  </header>
+
+  <section class="hero-wrap">
+    <div class="hero-card">
+      <div style="flex:1">
+        <h1 class="h-title">EduConnect — Professional school portal</h1>
+        <p class="h-lead">Unified portal for Teachers, Parents and Students — view dashboards, results, timetables, fees and more.</p>
+        <div style="margin-top:12px" class="row">
+          <a href="/portal.html"><button class="btn primary">Open Portal</button></a>
+          <a href="#features"><button class="btn alt">Explore features</button></a>
+        </div>
+      </div>
+      <div style="width:260px">
+        <div class="card" style="margin-bottom:10px;text-align:center">
+          <div style="font-weight:900;font-size:20px" id="users-count">—</div>
+          <div class="note">Total users</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-weight:900;font-size:20px" id="ann-count">—</div>
+          <div class="note">Announcements</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" style="margin-top:20px">
+    <h2>Features</h2>
+    <div class="features">
+      <a class="card-link" href="/teacher.html"><div class="feature-card f-teacher"><div>Teacher / Admin</div><div style="font-weight:600">Results • Lesson plans</div></div></a>
+      <a class="card-link" href="/parent.html"><div class="feature-card f-parent"><div>Parents</div><div style="font-weight:600">Progress • Complaints</div></div></a>
+      <a class="card-link" href="/student.html"><div class="feature-card f-student"><div>Students</div><div style="font-weight:600">Timetables • Homework</div></div></a>
+      <a class="card-link" href="/admin.html"><div class="feature-card f-analytics"><div>Admin</div><div style="font-weight:600">Users & Links</div></div></a>
+      <a class="card-link" href="#more"><div class="feature-card f-library"><div>Library</div><div style="font-weight:600">Digital Books</div></div></a>
+      <a class="card-link" href="#more"><div class="feature-card f-events"><div>Events</div><div style="font-weight:600">Clubs & Calendar</div></div></a>
+      <a class="card-link" href="#more"><div class="feature-card f-contacts"><div>Contacts</div><div style="font-weight:600">Staff Directory</div></div></a>
+      <a class="card-link" href="#more"><div class="feature-card f-more"><div>Policies</div><div style="font-weight:600">Help & FAQ</div></div></a>
+    </div>
+  </section>
+
+  <section style="margin-top:20px" class="card">
+    <h3 style="margin:0 0 8px 0">Announcements</h3>
+    <ul id="ann-list" style="color:var(--muted)"></ul>
+  </section>
+
+  <footer class="card" style="margin-top:20px;text-align:center">
+    © EduConnect Prototype • 2025
+  </footer>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+
+<script>
+function toast(msg, time=3000){
+  const wrap=document.getElementById('toasts');
+  const el=document.createElement('div'); el.className='toast'; el.textContent=msg; wrap.appendChild(el);
+  setTimeout(()=>{ el.style.opacity='0'; setTimeout(()=>el.remove(),300); }, time);
+}
+async function loadCounts(){
+  try{
+    const r = await fetch('/api/analytics'); const j=await r.json();
+    document.getElementById('users-count').textContent = j.totals.users+' users';
+    document.getElementById('ann-count').textContent = j.totals.announcements;
+    const ann = await fetch('/api/announcements'); const a=await ann.json();
+    document.getElementById('ann-list').innerHTML = (a||[]).map(x=>`<li><strong>${x.title}</strong> — ${x.body}</li>`).join('');
+  }catch(e){ console.error(e); toast('Could not load dashboard data'); }
+}
+loadCounts();
+</script>
+</body>
+</html>

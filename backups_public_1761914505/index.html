@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EduConnect — Home</title>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="brand">
+      <div class="logo">EC</div>
+      <div>
+        <div class="h1">EduConnect</div>
+        <div class="h2">School portal for Teachers, Parents & Students</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;align-items:center;">
+      <a href="/portal.html" class="back-button" style="background:transparent;border:1px solid #e6eef5;color:var(--accent);">Login</a>
+      <div id="live-dt" class="h2"></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="main">
+      <h2>Welcome to EduConnect</h2>
+      <p style="color:var(--muted)">Access Teacher, Parent and Student areas — click Login to choose your portal.</p>
+
+      <div class="cards" style="margin-top:12px">
+        <div class="card">
+          <h3>Teacher / Admin</h3>
+          <p>Lesson plans, staff directory, professional development and school policies.</p>
+          <a href="/teacher-login.html">Go to Login</a>
+        </div>
+
+        <div class="card">
+          <h3>Parent / Guardian</h3>
+          <p>Child progress, announcements, PTA and fees information.</p>
+          <a href="/parent-login.html">Go to Login</a>
+        </div>
+
+        <div class="card">
+          <h3>Student / Pupil</h3>
+          <p>Timetable, homework, online resources and clubs.</p>
+          <a href="/student-login.html">Go to Login</a>
+        </div>
+
+        <div class="card">
+          <h3>Portal</h3>
+          <p>All portals & quick links in one place.</p>
+          <a href="/portal.html">Open Portal</a>
+        </div>
+      </div>
+
+      <h3 style="margin-top:18px">Quick features</h3>
+      <div class="subcards">
+        <div class="subcard"><h4>School history & mission</h4><p class="h2" style="color:var(--muted)">Learn about EduConnect</p></div>
+        <div class="subcard"><h4>Contact & Map</h4><p class="h2" style="color:var(--muted)">Contact info and location</p></div>
+        <div class="subcard"><h4>FAQs & Support</h4><p class="h2" style="color:var(--muted)">Help and common questions</p></div>
+      </div>
+
+    </div>
+
+    <div class="side">
+      <div class="card">
+        <h3>Quick links</h3>
+        <div class="quicklist">
+          <a href="/teacher.html">Teachers</a>
+          <a href="/student.html">Students</a>
+          <a href="/parent.html">Parents</a>
+          <a href="/portal.html">Portal</a>
+          <a href="/student-dashboard.html">Sample Student Dashboard</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Contact</h3>
+        <p style="color:var(--muted)">info@educonnect.com · +260 123 456</p>
+        <a class="back-button" href="mailto:info@educonnect.com">Email</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">© EduConnect 2025</div>
+</div>
+
+<script>
+function updateDT(){ document.getElementById('live-dt').textContent=(new Date()).toLocaleString(); }
+setInterval(updateDT,1000); updateDT();
+</script>
+<!-- ===== EduConnect Features (inserted) ===== -->
+<section class="features card" aria-labelledby="features-title">
+  <div class="feature-left">
+    <div class="stats" aria-hidden="false">
+      <div class="stat"><div class="num enh-counter" data-to="128">0</div><div class="h2">Active Teachers</div></div>
+      <div class="stat"><div class="num enh-counter" data-to="1420">0</div><div class="h2">Students</div></div>
+      <div class="stat"><div class="num enh-counter" data-to="320">0</div><div class="h2">Parents</div></div>
+    </div>
+
+    <div class="card ticker" aria-live="polite"><div class="inner enh-ticker-inner"></div></div>
+
+    <div style="margin-top:8px" class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div style="font-weight:700">Quick Search</div>
+      </div>
+      <div class="quick-search" style="margin-top:8px">
+        <input aria-label="quick search" class="enh-quick-input" placeholder="Filter links or features...">
+        <a class="back-button" href="/portal.html">Portal</a>
+      </div>
+      <div class="quick-list" style="margin-top:10px">
+        <a class="enh-quick-item" data-tags="lesson plans resources" href="/teacher-lesson-plans.html">Lesson Plans</a>
+        <a class="enh-quick-item" data-tags="timetable homework" href="/student-home.html">Timetable</a>
+        <a class="enh-quick-item" data-tags="fees payments" href="/parent-announcements.html">Fees & Notices</a>
+        <a class="enh-quick-item" data-tags="pta meetings" href="/parent-pta.html">PTA</a>
+        <a class="enh-quick-item" data-tags="policies safeguarding" href="/teacher-policies.html">Policies</a>
+        <a class="enh-quick-item" data-tags="clubs sports" href="/student-clubs.html">Clubs</a>
+      </div>
+    </div>
+
+    <div class="card faqs" aria-label="FAQs">
+      <div class="faq">
+        <h4 class="enh-faq-toggle">How do I reset my password? <span>▾</span></h4>
+        <div class="answer enh-faq-answer">Use the Forgot Password option on the login page; admins can reset via the Admin panel.</div>
+      </div>
+      <div class="faq" style="margin-top:8px">
+        <h4 class="enh-faq-toggle">Where is the term calendar? <span>▾</span></h4>
+        <div class="answer enh-faq-answer">Open the Student Calendar from the Portal → Student section for event dates and term day details.</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="card" style="padding:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div><strong>Quick Insights</strong><div style="color:var(--muted);font-size:13px">Student performance snapshot</div></div>
+      <div style="font-size:12px;color:var(--muted)">Last 7 days</div>
+    </div>
+
+    <div class="canvas-chart" style="margin-top:10px">
+      <canvas id="enh-mini-chart" style="width:100%;height:80px"></canvas>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:8px;flex-direction:column">
+      <a class="back-button" href="/student-dashboard.html">Open student dashboard</a>
+      <a class="back-button" href="/teacher.html">Teacher area</a>
+      <a class="back-button" href="/parent.html">Parent area</a>
+    </div>
+  </aside>
+</section>
+<script src="/home-enhancements.js" defer></script>
+<!-- ===== end features block ===== -->
+<script src="/ui-enhance.js" defer></script>
+<script src="/profile.js" defer></script>
+</body>
+</html>

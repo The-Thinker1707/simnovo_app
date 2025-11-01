@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parent | EduConnect</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><div class="logo">EDU</div><div><div style="font-weight:800">EduConnect</div><div style="font-size:12px;color:#57606a">Parent area</div></div></div><nav class="nav"><a href="/portal.html">Logout</a></nav></header>
+    <main style="margin-top:18px">
+      <div class="section-panel"><h2>Parent Dashboard</h2><div id="parent-area"></div></div>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+
+<script>
+async function load(){
+  const r = await fetch('/api/parent/dashboard');
+  if(r.status===401){ document.getElementById('parent-area').innerHTML='<p>Please <a href="/portal.html">login</a> as a parent.</p>'; return; }
+  const data=await r.json();
+  document.getElementById('parent-area').innerHTML = `
+    <h3>Child: ${data.child.name}</h3>
+    <h4>Results</h4>
+    ${data.results.map(t=>`<div><strong>${t.term}</strong><ul>${t.subjects.map(s=>`<li>${s.name}: ${s.grade}</li>`).join('')}</ul></div>`).join('')}
+    <h4>Announcements</h4><ul>${data.announcements.map(a=>`<li>${a.title} — ${a.body}</li>`).join('')}</ul>
+    <h4>Submit complaint</h4>
+    <form id="complaint-form"><textarea name="text" rows="3" style="width:100%"></textarea><button type="submit">Send</button></form>
+  `;
+  document.getElementById('complaint-form').addEventListener('submit', async e=>{
+    e.preventDefault();
+    const text = e.target.elements['text'].value;
+    await fetch('/api/parent/complaint', {method:'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({text})});
+    alert('Complaint sent');
+  });
+}
+load();
+</script>
+</body></html>

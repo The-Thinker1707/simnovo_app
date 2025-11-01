@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EduConnect — Campus Operations Platform</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">EDUCONNECT</div>
+        <div style="line-height:1">
+          <div style="font-weight:800;font-size:14px">Campus Operations Platform</div>
+          <div style="font-size:13px;color:var(--muted)">Designed for administrators, faculty, students and families</div>
+        </div>
+      </div>
+
+      <nav class="top-nav">
+        <a href="/portal.html">Portal</a>
+        <a href="/portal.html" class="cta">Sign In</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-card" role="region" aria-labelledby="hero-heading">
+        <h1 id="hero-heading" class="h-title">A modern, secure academic platform — built for scale and clarity</h1>
+        <p class="h-lead">EduConnect brings together student information, learning resources, assessments and campus services — thoughtfully designed for large schools and universities.</p>
+
+        <div class="stats" aria-hidden="false" style="margin-top:18px">
+          <div class="stat"><div class="label">Active users</div><div class="value" id="s-users">—</div></div>
+          <div class="stat"><div class="label">Announcements</div><div class="value" id="s-ann">—</div></div>
+          <div class="stat"><div class="label">Resources</div><div class="value" id="s-lessons">—</div></div>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="/portal.html" class="cta" style="padding:10px 16px;border-radius:10px;">Open Portal</a>
+          <a href="#features" style="padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(9,30,40,0.04);text-decoration:none;color:var(--muted)">Explore features</a>
+          <span class="pill blue" aria-hidden="true">Campus-grade • Secure</span>
+          <span class="pill gold" aria-hidden="true">48 Departments</span>
+        </div>
+      </div>
+
+      <aside style="display:flex;flex-direction:column;gap:14px;">
+        <div class="dept-badge" role="complementary" aria-label="Departments">
+          <small style="font-weight:800;color:var(--muted)">Academic Units</small>
+          <strong>48 Departments</strong>
+        </div>
+
+        <div class="card" style="min-width:220px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:800;color:var(--muted)">Institution</div>
+            <div style="font-size:12px;color:var(--muted)">Overview</div>
+          </div>
+          <div style="margin-top:10px;color:var(--muted);font-size:13px">Manage faculties, departments, and administrative units with role-based access control and audit logs.</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- FEATURES (advanced grid with inline SVG icons) -->
+    <section id="features" style="margin-top:28px">
+      <h2 style="margin:0 0 14px 0;font-weight:900">Platform features — enterprise & campus ready</h2>
+
+      <div class="features" role="list">
+        <!-- Dashboard -->
+        <a class="feature-card" href="/teacher.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon" aria-hidden="true">
+              <!-- dashboard svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.18"/>
+                <rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.28"/>
+                <rect x="3" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.28"/>
+                <rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.22"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Unified Dashboard</div>
+              <div class="feature-desc">Custom dashboards for admins, faculty, parents and students — real-time KPIs.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Student Information -->
+        <a class="feature-card" href="/admin.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- user svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill="currentColor" opacity="0.24"/>
+                <path d="M3 20a8 8 0 0 1 18 0" fill="currentColor" opacity="0.18"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Student Records</div>
+              <div class="feature-desc">Comprehensive profiles, enrolment history, medical & guardian details.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- LMS -->
+        <a class="feature-card" href="/teacher.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- book svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 5v14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 7.5V17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Learning Management</div>
+              <div class="feature-desc">Upload lessons, assignments, resources and track engagement.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Assessments -->
+        <a class="feature-card" href="/teacher.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- chart svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 20v-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M10 20v-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M16 20V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M22 20v-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Assessments & Analytics</div>
+              <div class="feature-desc">Enter grades, run analytics, export reports and spot trends per cohort.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Timetables -->
+        <a class="feature-card" href="/student.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- calendar svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="16" rx="2" fill="currentColor" opacity="0.06"/>
+                <path d="M16 3v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M8 3v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Timetables & Scheduling</div>
+              <div class="feature-desc">Create, share and sync schedules across departments and classrooms.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Fees & Billing -->
+        <a class="feature-card" href="/admin.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- wallet svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3" y="7" width="18" height="12" rx="2" fill="currentColor" opacity="0.06"/>
+                <circle cx="18" cy="13" r="1.5" fill="currentColor" opacity="0.24"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Billing & Fees</div>
+              <div class="feature-desc">Manage term fees, receipts, payment tracking and reminders.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Library -->
+        <a class="feature-card" href="/library.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- library svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6 20V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M12 20V4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M18 20V8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Library & Resources</div>
+              <div class="feature-desc">Digital books, search, lending and curated reading lists.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Events -->
+        <a class="feature-card" href="/events.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- star svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 3l2.6 5.3L20 10l-4 3.9L17 19l-5-2.7L7 19l1-5.1L4 10l5.4-1.7L12 3z" fill="currentColor" opacity="0.12"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Events & Campus Life</div>
+              <div class="feature-desc">Calendars, clubs, ticketing and announcements for campus community.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Messaging -->
+        <a class="feature-card" href="/portal.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- message svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor" opacity="0.06"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Communications</div>
+              <div class="feature-desc">Announcements, messaging, email integration and notification center.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Staff Directory -->
+        <a class="feature-card" href="/staff.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- directory svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 6h16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M4 12h16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M4 18h16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Staff Directory</div>
+              <div class="feature-desc">Searchable staff profiles, roles and contact details.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Policies & Compliance -->
+        <a class="feature-card" href="/admin.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- shield svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none' xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 3l7 4v5c0 5-3.6 9.7-7 11-3.4-1.3-7-6-7-11V7l7-4z" fill="currentColor" opacity="0.08"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Policies & Compliance</div>
+              <div class="feature-desc">Store policy docs, manage approvals, and ensure regulatory compliance.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Integrations -->
+        <a class="feature-card" href="/admin.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- puzzle svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M10 10h4v4h-4z" fill="currentColor" opacity="0.06"/>
+                <path d="M3 3h6v6H3z" fill="currentColor" opacity="0.04"/>
+                <path d="M15 15h6v6h-6z" fill="currentColor" opacity="0.04"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Integrations</div>
+              <div class="feature-desc">Connect SIS, SSO, payment gateways and external LMS tools.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Mobile Apps -->
+        <a class="feature-card" href="/portal.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- phone svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="7" y="2" width="10" height="20" rx="2" fill="currentColor" opacity="0.06"/>
+                <circle cx="12" cy="18" r="0.9" fill="currentColor" opacity="0.24"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Mobile Apps</div>
+              <div class="feature-desc">Native apps for students and parents with push notifications.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Security & Access -->
+        <a class="feature-card" href="/admin.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- lock svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="6" y="11" width="12" height="9" rx="2" fill="currentColor" opacity="0.06"/>
+                <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Security & Access Control</div>
+              <div class="feature-desc">Role-based access, SSO, audit logs and encrypted storage.</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Support & Training -->
+        <a class="feature-card" href="/portal.html" role="listitem">
+          <div class="feature-top">
+            <div class="feature-icon">
+              <!-- help svg -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.04"/>
+                <path d="M12 17v.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M10.5 9a1.5 1.5 0 1 1 3 0c0 1.7-2 1.5-2 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title">Support & Training</div>
+              <div class="feature-desc">Help center, trainings and priority support plans for institutions.</div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section style="margin-top:26px">
+      <h3 style="margin:0 0 10px 0;font-weight:800">Latest announcements</h3>
+      <div class="card">
+        <ul id="announcements" style="margin:0;padding-left:18px;color:var(--muted)"></ul>
+      </div>
+    </section>
+
+    <footer style="margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center">
+      <div>© EduConnect • 2025</div>
+      <div>Designed for institutional scale</div>
+    </footer>
+  </div>
+
+  <script>
+    // Fetch analytics + announcements to populate homepage stats
+    async function loadHome(){
+      try{
+        const r = await fetch('/api/analytics');
+        if(r.ok){
+          const d = await r.json();
+          document.getElementById('s-users').textContent = d.totals?.users ?? '—';
+          document.getElementById('s-ann').textContent = d.totals?.announcements ?? '—';
+          document.getElementById('s-lessons').textContent = d.totals?.lessons ?? '—';
+        }
+      }catch(e){ console.warn('analytics error', e); }
+
+      try{
+        const a = await fetch('/api/announcements');
+        if(a.ok){
+          const anns = await a.json();
+          const ul = document.getElementById('announcements');
+          ul.innerHTML = '';
+          if(!anns || anns.length === 0){
+            ul.innerHTML = '<li style="color:var(--muted)">No announcements</li>';
+          } else {
+            anns.forEach(x=>{
+              const li = document.createElement('li');
+              li.style.marginBottom = '10px';
+              const t = document.createElement('div'); t.style.fontWeight='800'; t.textContent = x.title || '';
+              const b = document.createElement('div'); b.style.color='var(--muted)'; b.textContent = x.body || '';
+              li.appendChild(t); li.appendChild(b);
+              ul.appendChild(li);
+            });
+          }
+        }
+      }catch(e){ console.warn('ann error', e); }
+    }
+    document.addEventListener('DOMContentLoaded', loadHome);
+  </script>
+</body>
+</html>

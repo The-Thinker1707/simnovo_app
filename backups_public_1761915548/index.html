@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EduConnect — Home</title>
+<link rel="stylesheet" href="/styles.css">
+<style>
+/* small local overrides to ensure compact layout */
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 12px;text-align:center}
+.hero .cta{margin-top:18px}
+.portal-btn{background:linear-gradient(90deg,#0b76d1,#0b9bd1);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0}
+.info-card{background:var(--card);padding:12px;border-radius:10px;box-shadow:var(--shadow)}
+.small{font-size:13px;color:var(--muted)}
+.footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px;padding:12px}
+@media(max-width:560px){.hero{padding:26px 8px}}
+</style>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">EC</div>
+        <div>
+          <div class="h1">EduConnect</div>
+          <div class="h2">School Portal — Professional & Responsive</div>
+        </div>
+      </div>
+      <nav>
+        <a class="back-button" href="/portal.html">Login</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero card">
+        <h1 style="margin:0;font-size:28px">Welcome to EduConnect</h1>
+        <p class="small" style="max-width:720px;margin-top:8px">
+          A modern, polished portal for Teachers, Parents & Students — lesson plans, timetables,
+          results, announcements and more. Click Login to access your portal face.
+        </p>
+        <div class="cta">
+          <a class="portal-btn" href="/portal.html">Login to Portal</a>
+        </div>
+      </section>
+
+      <section style="margin-top:14px">
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card" style="flex:1 1 640px">
+            <h3 style="margin-top:0">What EduConnect offers</h3>
+            <div class="info-grid">
+              <div class="info-card">
+                <h4>For Teachers</h4>
+                <ul class="small">
+                  <li>Lesson plans and resources</li>
+                  <li>Staff directory & contact info</li>
+                  <li>Professional development opportunities</li>
+                  <li>School policies & procedures</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <h4>For Pupils</h4>
+                <ul class="small">
+                  <li>Homework assignments & deadlines</li>
+                  <li>School calendar & events</li>
+                  <li>Student clubs & activities</li>
+                  <li>Online learning resources</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <h4>For Parents</h4>
+                <ul class="small">
+                  <li>School news & announcements</li>
+                  <li>PTA info & meetings</li>
+                  <li>Parenting resources & tips</li>
+                  <li>Policies & procedures</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <h4>General</h4>
+                <ul class="small">
+                  <li>School history & mission</li>
+                  <li>Contact information & map</li>
+                  <li>FAQs and support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside class="side card" style="width:320px;min-width:220px">
+            <div style="font-weight:700">Quick Info</div>
+            <div class="small" style="margin-top:8px">Use the Login button to go to the portal and select Teacher, Parent or Student login.</div>
+            <div style="margin-top:12px">
+              <div class="small" id="liveDatetime">Loading time...</div>
+              <a class="back-button" href="/portal.html" style="margin-top:8px;display:inline-block">Portal</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="footer">© EduConnect 2025</div>
+    </main>
+  </div>
+
+<script src="/live-datetime.js" defer></script>
+</body>
+</html>

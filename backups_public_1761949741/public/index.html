@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>EduConnect — Portal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">EDUCONNECT</div>
+      </div>
+      <nav class="top-nav">
+        <a href="#features">Features</a>
+        <a class="cta" href="/portal.html">Portal Login</a>
+      </nav>
+    </header>
+
+    <section class="hero-wrap" aria-label="Welcome">
+      <div class="hero-card">
+        <div class="hero-left">
+          <h1 class="h-title">Welcome to EduConnect</h1>
+          <p class="h-lead">A professional portal for school administration, teachers, parents and pupils. Click any card to explore the area or log in to access full features.</p>
+
+          <div class="search-box" role="search" aria-label="Search features">
+            <input id="search" placeholder="Search features, policies, or resources..." />
+            <button id="search-btn">Search</button>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="/portal.html" class="card-link"><button class="btn primary">Open Portal</button></a>
+            <a href="#features" class="card-link"><button class="btn ghost">Browse features</button></a>
+          </div>
+        </div>
+
+        <div class="hero-stats" aria-hidden="false">
+          <div class="stat"><div class="num">1,250+</div><div class="label">Active Users</div></div>
+          <div class="stat"><div class="num">3</div><div class="label">Faces</div></div>
+          <div class="stat"><div class="num">48</div><div class="label">Departments</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" style="margin-top:20px">
+      <h2 style="margin:0 0 12px 0">Features</h2>
+      <div class="features">
+        <a class="card-link" href="/teacher.html">
+          <div class="feature-card f-teacher" tabindex="0">
+            <div class="k">Teacher / Admin</div>
+            <div style="font-weight:600">Results • Fees • Lesson plans</div>
+            <div style="font-weight:400;font-size:13px;margin-top:auto">Enter marks, manage class info and staff directory.</div>
+          </div>
+        </a>
+
+        <a class="card-link" href="/parent.html">
+          <div class="feature-card f-parent" tabindex="0">
+            <div class="k">Parents</div>
+            <div style="font-weight:600">Track progress • Complaints</div>
+            <div style="font-weight:400;font-size:13px;margin-top:auto">View term results, submit complaints and stay updated.</div>
+          </div>
+        </a>
+
+        <a class="card-link" href="/student.html">
+          <div class="feature-card f-student" tabindex="0">
+            <div class="k">Students</div>
+            <div style="font-weight:600">Timetables • Homework</div>
+            <div style="font-weight:400;font-size:13px;margin-top:auto">Access timetables, assignments and learning resources.</div>
+          </div>
+        </a>
+
+        <a class="card-link" href="/portal.html">
+          <div class="feature-card f-library" tabindex="0">
+            <div class="k">Library</div>
+            <div style="font-weight:600">Digital books</div>
+            <div style="font-weight:400;font-size:13px;margin-top:auto">Search and borrow digital textbooks and resources.</div>
+          </div>
+        </a>
+
+        <a class="card-link" href="#events">
+          <div class="feature-card f-events" tabindex="0">
+            <div class="k">Events</div>
+            <div style="font-weight:600">Calendar & Clubs</div>
+            <div style="font-weight:400;font-size:13px;margin-top:auto">Sign up for events, clubs and extracurriculars.</div>
+          </div>
+        </a>
+
+        <a class="card-link" href="#analytics">
+          <div class="feature-card f-analytics" tabindex="0">
+            <div class="k">Analytics</div>
+            <div style="font-weight:600">Reports & Dashboards</div>
+            <div style="font-weight:400;font-size:13px;margin-top:auto">Get insights on attendance, performance and fees.</div>
+          </div>
+        </a>
+
+        <a class="card-link" href="#contact">
+          <div class="feature-card f-contacts" tabindex="0">
+            <div class="k">Contacts</div>
+            <div style="font-weight:600">Staff & Admin</div>
+            <div style="font-weight:400;font-size:13px;margin-top:auto">Find contact details and support lines.</div>
+          </div>
+        </a>
+
+        <a class="card-link" href="#more">
+          <div class="feature-card" style="background:linear-gradient(135deg,#ffd4a3,#ff9aa2)" tabindex="0">
+            <div class="k">More</div>
+            <div style="font-weight:600">Policies & Help</div>
+            <div style="font-weight:400;font-size:13px;margin-top:auto">Access policies, help and FAQ for the portal.</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section style="margin-top:20px" class="promo">
+      <div class="panel card">
+        <h3 style="margin:0 0 8px 0">Upcoming Event</h3>
+        <div style="color:var(--muted)">Open Day • Saturday, Nov 8 • Register for department tours.</div>
+      </div>
+      <div class="panel card">
+        <h3 style="margin:0 0 8px 0">Announcements</h3>
+        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+          <li>Term reports will be published next Friday.</li>
+          <li>PTA meeting scheduled for 3pm in Main Hall.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>© EduConnect 2025</div>
+        <div style="color:var(--muted)">Built for demo & presentation — click any card to explore</div>
+      </div>
+    </footer>
+  </div>
+
+<script>
+  // small search that highlights feature cards (client-only)
+  const searchInput = document.getElementById('search');
+  const searchBtn = document.getElementById('search-btn');
+  function runSearch(){
+    const q = (searchInput.value || '').toLowerCase().trim();
+    const cards = document.querySelectorAll('.feature-card');
+    if(!q){ cards.forEach(c=>c.style.opacity=1); return; }
+    cards.forEach(c=>{
+      const text = c.textContent.toLowerCase();
+      c.style.opacity = text.includes(q) ? '1' : '0.25';
+    });
+  }
+  searchBtn.addEventListener('click', runSearch);
+  searchInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); runSearch(); }});
+</script>
+</body>
+</html>

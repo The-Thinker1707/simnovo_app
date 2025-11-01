@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Portal Login — EduConnect</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><div class="logo">EDUCONNECT</div></div><nav class="top-nav"><a href="/">Home</a></nav></header>
+
+    <div class="login-wrap reveal">
+      <div class="login-card">
+        <div class="login-head">
+          <div style="font-weight:900">Portal Login</div>
+          <div style="color:var(--muted)">Select your role or sign in</div>
+        </div>
+
+        <div class="login-fields">
+          <form id="login-form" method="post" action="/auth/login" style="display:grid;gap:8px">
+            <input name="email" placeholder="Email" required />
+            <input name="password" type="password" placeholder="Password" required />
+            <div style="display:flex;gap:8px;align-items:center">
+              <button type="submit">Login</button>
+              <a href="/" class="top-nav role-btn" style="padding:8px 10px;border-radius:8px;text-decoration:none">Home</a>
+              <button type="button" onclick="history.back()" class="role-btn" style="padding:8px 10px;border-radius:8px">Back</button>
+            </div>
+          </form>
+        </div>
+
+        <div style="margin-top:14px;color:var(--muted)">Or use a quick demo login:</div>
+
+        <div class="role-cards" style="margin-top:10px">
+          <div class="role-card teacher" role="button" tabindex="0" onclick="demoLogin('teacher')">
+            <div><div class="r-title">Teacher & Administration</div><div class="r-desc">Lesson plans, results, fees and admin tools.</div></div>
+            <div style="display:flex;gap:8px">
+              <button class="role-btn demo" onclick="demoLogin('teacher'); event.stopPropagation();">Demo</button>
+              <button class="role-btn" onclick="prefill('teacher'); event.stopPropagation();">Prefill</button>
+            </div>
+          </div>
+
+          <div class="role-card parent" role="button" tabindex="0" onclick="demoLogin('parent')">
+            <div><div class="r-title">Parent / Guardian</div><div class="r-desc">Progress, fees, complaints and announcements.</div></div>
+            <div style="display:flex;gap:8px">
+              <button class="role-btn demo" onclick="demoLogin('parent'); event.stopPropagation();">Demo</button>
+              <button class="role-btn" onclick="prefill('parent'); event.stopPropagation();">Prefill</button>
+            </div>
+          </div>
+
+          <div class="role-card student" role="button" tabindex="0" onclick="demoLogin('student')">
+            <div><div class="r-title">Student / Pupil</div><div class="r-desc">Timetables, homework, eBooks and results.</div></div>
+            <div style="display:flex;gap:8px">
+              <button class="role-btn demo" onclick="demoLogin('student'); event.stopPropagation();">Demo</button>
+              <button class="role-btn" onclick="prefill('student'); event.stopPropagation();">Prefill</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer style="margin-top:18px;color:var(--muted);font-size:13px">Demo accounts: teacher@example.com / teach123 • parent@example.com / parent123 • student@example.com / student123</footer>
+  </div>
+
+<script>
+const creds = {
+  teacher: { email: 'teacher@example.com', password: 'teach123', redirect: '/teacher.html' },
+  parent: { email: 'parent@example.com', password: 'parent123', redirect: '/parent.html' },
+  student: { email: 'student@example.com', password: 'student123', redirect: '/student.html' }
+};
+
+function demoLogin(role){
+  const c = creds[role];
+  if(!c) return;
+  fetch('/auth/login', {
+    method: 'POST',
+    headers: {'Content-Type':'application/x-www-form-urlencoded'},
+    body: 'email=' + encodeURIComponent(c.email) + '&password=' + encodeURIComponent(c.password)
+  }).then(()=> { window.location.href = c.redirect; }).catch(()=>{ alert('Demo login failed'); });
+}
+
+function prefill(role){
+  const c = creds[role];
+  if(!c) return;
+  document.querySelector('#login-form input[name="email"]').value = c.email;
+  document.querySelector('#login-form input[name="password"]').value = c.password;
+  window.scrollTo({top: document.querySelector('.login-wrap').offsetTop - 20, behavior:'smooth'});
+}
+
+// reveal
+const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }) }, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

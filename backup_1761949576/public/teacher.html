@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Teacher Dashboard</title><link rel="stylesheet" href="/styles.css"></head>
+<body><div class="container">
+<h1>Teacher Dashboard</h1>
+<div id="content"></div>
+<a href="/auth/logout"><button>Logout</button></a>
+</div>
+<script>
+fetch('/api/teacher/overview').then(r=>r.json()).then(d=>{
+  document.getElementById('content').innerHTML =
+    '<h3>Announcements</h3>' + d.announcements.map(a=>'<li>'+a.title+'</li>').join('') +
+    '<h3>Staff</h3>' + d.staff.map(s=>'<li>'+s.name+' - '+s.role+'</li>').join('');
+});
+</script></body></html>

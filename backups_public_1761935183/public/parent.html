@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Parent — EduConnect</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><div class="logo">EDUCONNECT</div></div><nav class="top-nav"><a href="/auth/logout">Logout</a><a href="/">Home</a></nav></header>
+    <h2 style="margin:0 0 8px 0;font-weight:900">Parent / Guardian</h2>
+    <p style="margin:0 0 14px 0;color:var(--muted)">View your child's progress, fees, announcements and communicate with teachers.</p>
+
+    <div class="features">
+      <div class="card" onclick="openFeature('progress')"><h4>Progress & Results</h4><p>See term-wise performance, grades and teacher feedback.</p></div>
+      <div class="card" onclick="openFeature('fees')"><h4>Fees & Payment Status</h4><p>Check outstanding fees, receipts and payment references.</p></div>
+      <div class="card" onclick="openFeature('complaints')"><h4>Complaints & Feedback</h4><p>Submit complaints or suggestions and track responses.</p></div>
+      <div class="card" onclick="openFeature('news')"><h4>School News & Announcements</h4><p>Latest notices from the school and upcoming events.</p></div>
+      <div class="card" onclick="openFeature('pta')"><h4>PTA Information</h4><p>Parent-Teacher Association meetings, minutes and contact points.</p></div>
+      <div class="card" onclick="openFeature('parenting')"><h4>Parenting Resources</h4><p>Guides, tips and resources for supporting your child's learning.</p></div>
+      <div class="card" onclick="openFeature('policies')"><h4>School Policies</h4><p>Access school policies and procedures relevant to students and parents.</p></div>
+      <div class="card" onclick="openFeature('contact')"><h4>Contact & Support</h4><p>Contact school offices, map and helpdesk.</p></div>
+    </div>
+
+    <div style="margin-top:18px"><button onclick="location.href='/'" class="role-btn">Back to Home</button></div>
+  </div>
+
+<script>
+function openFeature(id){
+  alert('Open feature: ' + id + '\\n(Placeholder — can be expanded into pages or modals.)');
+}
+</script>
+</body>
+</html>

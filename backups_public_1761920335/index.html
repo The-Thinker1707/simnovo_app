@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>EduConnect — Professional school portal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">EC</div>
+        <div>
+          <div style="font-weight:800;font-size:16px">EduConnect</div>
+          <div style="font-size:12px;color:#6b7280">Professional school portal</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="nav-link nav-about" href="/index.html#about">About</a>
+        <a class="nav-link nav-contact" href="/index.html#contact">Contact</a>
+        <a class="nav-link nav-features" href="/index.html#features">Explore features</a>
+        <a class="nav-link nav-account" href="/portal.html">Register / Login</a>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <h1 class="title">Welcome to EduConnect</h1>
+        <p class="subtitle">A single professional portal for school administration, teachers, parents and pupils. Use the Login button to open the portal and pick your role.</p>
+
+        <div class="nav-row" aria-hidden="false" style="margin-top:6px">
+          <a class="nav-link nav-about" href="/index.html#about" style="padding:10px 14px">About</a>
+          <a class="nav-link nav-contact" href="/index.html#contact" style="padding:10px 14px">Contact</a>
+          <a class="nav-link nav-features" href="/index.html#features" style="padding:10px 14px">Explore features</a>
+          <a class="nav-link nav-account" href="/portal.html" style="padding:10px 14px">Register / Login</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div id="live-dt" class="live-dt">--</div>
+        <div style="color:#6b7280;font-size:13px">Demo logins: teacher@example.com / teach123 · parent@example.com / parent123 · student@example.com / student123</div>
+        <div style="margin-top:12px"><a class="cta-btn" href="/portal.html">Open Portal</a></div>
+      </div>
+    </section>
+
+    <!-- condensed executive cards -->
+    <section style="margin-top:18px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2 style="margin:0">Quick access</h2>
+        <div class="small">Core areas for the school</div>
+      </div>
+
+      <div class="sections" style="margin-top:12px;">
+        <article class="card teacher" role="region" aria-labelledby="teacher-h">
+          <div class="head">
+            <div class="icon">T</div>
+            <div>
+              <h3 id="teacher-h">Teacher / Admin</h3>
+              <p class="small">Lesson plans, class info, results, fees</p>
+            </div>
+          </div>
+
+          <div>
+            <ul>
+              <li>Lesson plans & resources</li>
+              <li>Staff directory & contacts</li>
+              <li>Professional development</li>
+              <li>Policies, results & fee management</li>
+            </ul>
+            <div style="margin-top:10px"><a class="open" href="/teacher.html">Open Teacher area →</a></div>
+          </div>
+        </article>
+
+        <article class="card parent" role="region" aria-labelledby="parent-h">
+          <div class="head">
+            <div class="icon">P</div>
+            <div>
+              <h3 id="parent-h">Parent / Guardian</h3>
+              <p class="small">Child progress, announcements, fees</p>
+            </div>
+          </div>
+
+          <div>
+            <ul>
+              <li>Child progress & term results</li>
+              <li>Announcements & PTA info</li>
+              <li>Complaints & communications</li>
+              <li>Fees overview</li>
+            </ul>
+            <div style="margin-top:10px"><a class="open" href="/parent.html">Open Parent area →</a></div>
+          </div>
+        </article>
+
+        <article class="card student" role="region" aria-labelledby="student-h">
+          <div class="head">
+            <div class="icon">S</div>
+            <div>
+              <h3 id="student-h">Student / Pupil</h3>
+              <p class="small">Timetable, homework, resources</p>
+            </div>
+          </div>
+
+          <div>
+            <ul>
+              <li>Homework & deadlines</li>
+              <li>Timetable & attendance</li>
+              <li>Clubs & activities</li>
+              <li>Online learning resources</li>
+            </ul>
+            <div style="margin-top:10px"><a class="open" href="/student.html">Open Student area →</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- smaller general area -->
+    <section id="features" style="margin-top:18px">
+      <div class="card" style="padding:14px">
+        <h3 style="margin:0 0 8px 0">General</h3>
+        <p class="small" style="margin:0 0 8px 0">School history & mission · Contact & map · FAQs and support</p>
+        <div style="margin-top:10px"><a class="open" href="/portal.html">Contact / Support →</a></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© EduConnect 2025</div>
+      <div>@educonnect 2025</div>
+    </footer>
+  </div>
+
+  <script src="/live-datetime.js"></script>
+</body>
+</html>

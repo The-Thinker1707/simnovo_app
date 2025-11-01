@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Dashboard</title><link rel="stylesheet" href="/styles.css"></head>
+<body><div class="container">
+<h1>Student Dashboard</h1>
+<div id="content"></div>
+<a href="/auth/logout"><button>Logout</button></a>
+</div>
+<script>
+fetch('/api/student/dashboard').then(r=>r.json()).then(d=>{
+  let hw = d.homework.map(h=>'<li>'+h.title+' (due '+h.due+')</li>').join('');
+  let tt = d.timetable.map(t=>'<li>'+t.day+' '+t.time+' - '+t.subject+'</li>').join('');
+  document.getElementById('content').innerHTML = '<h3>Timetable</h3><ul>'+tt+'</ul><h3>Homework</h3><ul>'+hw+'</ul>';
+});
+</script></body></html>

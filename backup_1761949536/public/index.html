@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>EduConnect — Home</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">EDU</div>
+        <div>
+          <div style="font-weight:800;font-size:16px">EduConnect</div>
+          <div style="font-size:12px;color:#6b7280">Professional school portal</div>
+        </div>
+      </div>
+      <nav class="nav"><a href="#about">About</a><a class="cta" href="/portal.html">Login</a></nav>
+    </header>
+
+    <div class="hero-wrap">
+      <section class="hero">
+        <div class="hero-left">
+          <h1 class="title">Welcome to EduConnect</h1>
+          <p class="subtitle">A single professional portal for school administration, teachers, parents and pupils. Use the Login button to open the portal and pick your role.</p>
+          <div><a class="cta-btn" href="/portal.html">Open Portal</a> <a class="ghost-btn" href="#features">About / Features</a></div>
+        </div>
+        <div style="min-width:220px;text-align:right">
+          <div id="live-dt" style="font-weight:700;color:#0b5da8;margin-bottom:8px">--</div>
+          <div style="color:#6b7280;font-size:13px">Demo: teacher@example.com / teach123 · parent@example.com / parent123 · student@example.com / student123</div>
+        </div>
+      </section>
+    </div>
+
+    <section style="margin-top:18px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2 style="margin:0">Quick access</h2><div style="color:#6b7280">Core areas</div>
+      </div>
+
+      <div class="sections" style="margin-top:12px">
+        <article class="card teacher" onclick="location.href='#teacher'">
+          <div class="head"><div class="icon">T</div><div><h3>Teacher / Admin</h3><p>Lesson plans, marks, fees</p></div></div>
+          <div><ul><li>Lesson plans</li><li>Markbook</li><li>Staff directory</li></ul><div style="margin-top:8px"><a class="open" href="#teacher">Open →</a></div></div>
+        </article>
+
+        <article class="card parent" onclick="location.href='#parent'">
+          <div class="head"><div class="icon">P</div><div><h3>Parent / Guardian</h3><p>View progress & results</p></div></div>
+          <div><ul><li>Child progress</li><li>Announcements</li><li>Fees</li></ul><div style="margin-top:8px"><a class="open" href="#parent">Open →</a></div></div>
+        </article>
+
+        <article class="card student" onclick="location.href='#student'">
+          <div class="head"><div class="icon">S</div><div><h3>Student / Pupil</h3><p>Timetable & homework</p></div></div>
+          <div><ul><li>Homework</li><li>Timetable</li><li>Clubs</li></ul><div style="margin-top:8px"><a class="open" href="#student">Open →</a></div></div>
+        </article>
+      </div>
+    </section>
+
+    <main style="margin-top:18px">
+      <div id="teacher" class="section-full" aria-labelledby="teacher-section">
+        <div class="section-panel"><h3 id="teacher-section">Teacher & Admin</h3><p style="color:#57606a">Lesson planning, markbook and staff tools — available when you log in.</p><div id="teacher-area"></div></div>
+        <aside class="side-panel"><strong>Quick actions</strong><a href="/portal.html">Open teacher portal →</a></aside>
+      </div>
+
+      <div id="parent" class="section-full" style="margin-top:14px">
+        <div class="section-panel"><h3>Parent / Guardian</h3><p style="color:#57606a">View your child's progress and term results.</p><div id="parent-area"></div></div>
+        <aside class="side-panel"><strong>Parent links</strong><a href="/portal.html">Login to view child →</a></aside>
+      </div>
+
+      <div id="student" class="section-full" style="margin-top:14px">
+        <div class="section-panel"><h3>Student / Pupil</h3><p style="color:#57606a">Timetable, homework and resources available after login.</p><div id="student-area"></div></div>
+        <aside class="side-panel"><strong>Student links</strong><a href="/portal.html">Open student portal →</a></aside>
+      </div>
+    </main>
+
+    <section id="features" style="margin-top:18px">
+      <div class="card general" style="padding:12px"><h3 style="margin:0 0 8px 0">General</h3><p style="margin:0 0 8px 0;color:#57606a">School history · Contact · FAQs</p></div>
+    </section>
+
+    <footer class="footer"><div>© EduConnect 2025</div><div>@educonnect</div></footer>
+  </div>
+
+<script>
+(function tick(){
+  const el=document.getElementById('live-dt'); if(!el) return;
+  const now=new Date();
+  el.textContent = now.toLocaleString(undefined,{ weekday:'short', year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
+  setTimeout(tick,30000);
+})();
+</script>
+</body>
+</html>

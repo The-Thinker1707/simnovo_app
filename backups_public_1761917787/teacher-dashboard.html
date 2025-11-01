@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Teacher Dashboard — EduConnect</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/teacher.css">
+</head><body>
+<div class="app">
+  <header class="header"><div class="brand"><div class="logo" style="background:linear-gradient(135deg,#062a5b,#0b76d1)">T</div><div><div class="h1">Teacher Dashboard</div><div class="h2 small">Executive view</div></div></div><nav style="gap:8px"><a class="back-button nav-back" href="#">Back</a></nav></header>
+
+  <section style="display:grid;grid-template-columns:300px 1fr;gap:12px;margin-top:12px">
+    <!-- left profile -->
+    <aside class="card" style="padding:14px">
+      <h4 style="margin:0">Profile</h4>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+        <img id="teacher-photo" src="/teacher-staff.png" alt="photo" style="width:72px;height:72px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.06)">
+        <div>
+          <div style="font-weight:700">Ms Teacher</div>
+          <div class="small">Maths • Senior</div>
+        </div>
+      </div>
+      <div style="margin-top:8px">
+        <input class="input profile-upload" data-preview="#teacher-photo" type="file" accept="image/*">
+      </div>
+      <div style="margin-top:12px">
+        <div class="small"><strong>Email</strong><div>teacher@example.com</div></div>
+        <div class="small" style="margin-top:6px"><strong>ID</strong><div>TEA-0002</div></div>
+      </div>
+    </aside>
+
+    <!-- main panels -->
+    <main>
+      <div class="cards">
+        <div class="card" data-target="#panel-lesson" style="cursor:pointer">
+          <h4 style="margin:0">Lesson Plans & Resources</h4>
+          <p class="small">Create and share teaching materials</p>
+        </div>
+
+        <div class="card" data-target="#panel-staff" style="cursor:pointer">
+          <h4 style="margin:0">Staff Directory</h4>
+          <p class="small">View contacts & departments</p>
+        </div>
+
+        <div class="card" data-target="#panel-pd" style="cursor:pointer">
+          <h4 style="margin:0">Professional Development</h4>
+          <p class="small">Workshops and courses</p>
+        </div>
+
+        <div class="card" data-target="#panel-results" style="cursor:pointer">
+          <h4 style="margin:0">Results & Gradebook</h4>
+          <p class="small">Enter scores and view charts</p>
+        </div>
+      </div>
+
+      <!-- Panels (hidden by default) -->
+      <div id="panel-lesson" class="panel card" style="display:none;margin-top:12px">
+        <h3 style="margin:0">Lesson Plans</h3>
+        <p class="small">Upload documents, link resources and assign to classes.</p>
+        <a class="back-button" href="#" onclick="document.querySelectorAll('.panel').forEach(p=>p.style.display='none');return false;">Close</a>
+      </div>
+
+      <div id="panel-staff" class="panel card" style="display:none;margin-top:12px">
+        <h3 style="margin:0">Staff Directory</h3>
+        <ul class="small">
+          <li>Ms Teacher — Maths — teacher@example.com</li>
+          <li>Mr Admin — Principal — admin@example.com</li>
+        </ul>
+      </div>
+
+      <div id="panel-pd" class="panel card" style="display:none;margin-top:12px">
+        <h3 style="margin:0">Professional Development</h3>
+        <p class="small">Upcoming: Assessment Strategies — 2025-12-05</p>
+      </div>
+
+      <div id="panel-results" class="panel card" style="display:none;margin-top:12px">
+        <h3 style="margin:0">Results & Charts</h3>
+        <p class="small">Class performance over the last 6 weeks:</p>
+        <div style="height:220px"><canvas data-chart="teacherLoad" data-chart-type="bar" data-chart-id="teacherLoad"></canvas></div>
+      </div>
+
+    </main>
+  </section>
+
+  <footer class="footer card" style="margin-top:12px">© EduConnect 2025</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/dashboard-common.js" defer></script>
+</body></html>

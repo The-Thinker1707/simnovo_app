@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Parent Dashboard</title><link rel="stylesheet" href="/styles.css"></head>
+<body><div class="container">
+<h1>Parent Dashboard</h1>
+<div id="content"></div>
+<a href="/auth/logout"><button>Logout</button></a>
+</div>
+<script>
+fetch('/api/parent/dashboard').then(r=>r.json()).then(d=>{
+  let resHTML = d.results.map(t=>'<b>'+t.term+'</b><ul>'+t.subjects.map(s=>'<li>'+s.name+': '+s.grade+'</li>').join('')+'</ul>').join('');
+  document.getElementById('content').innerHTML = '<h3>Results</h3>'+resHTML;
+});
+</script></body></html>

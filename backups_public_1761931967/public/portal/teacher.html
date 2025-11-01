@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teacher Portal — EduConnect</title>
+<style>body{font-family:Arial;background:#f4f6f8;margin:0;color:#07202b}.container{max-width:900px;margin:18px auto;padding:16px}.card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(10,20,30,0.06)}a.back{display:inline-block;margin-bottom:10px;text-decoration:none;color:#0a2540}input,button{display:block;width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ddd}button{background:#0a2540;color:#fff;border:0}.small{font-size:.9rem;color:#666}</style>
+</head><body>
+<div class="container">
+  <a class="back" href="/index.html">← Back to Home</a>
+  <div class="card">
+    <h2>Teacher Login</h2>
+    <p class="small">Demo credential: teacher@example.com / teach123</p>
+    <form id="teacher-login-form">
+      <input type="email" id="teacher-email" placeholder="Email" required value="teacher@example.com">
+      <input type="password" id="teacher-password" placeholder="Password" required value="teach123">
+      <button type="submit">Login</button>
+    </form>
+    <div id="teacher-msg" style="margin-top:10px;color:red"></div>
+  </div>
+</div>
+<script>
+document.getElementById('teacher-login-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const email = document.getElementById('teacher-email').value;
+  const password = document.getElementById('teacher-password').value;
+  try{
+    const r = await fetch('/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});
+    const j = await r.json();
+    if(r.ok && j.token){ localStorage.setItem('edu_token', j.token); location.href='/portal/teacher-dashboard.html'; }
+    else document.getElementById('teacher-msg').textContent = j.error || 'Invalid credentials';
+  }catch(err){ document.getElementById('teacher-msg').textContent = 'Network error'; }
+});
+</script>
+</body></html>

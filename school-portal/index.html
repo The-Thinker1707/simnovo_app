@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f9fa; }
+        .navbar-brand { font-weight: bold; }
+        .dashboard { display: none; }
+        .section-card { margin-bottom: 20px; }
+        .login-container { max-width: 400px; margin: 100px auto; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">School Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#history">School History & Mission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact & Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQs & Support</a></li>
+                    <li class="nav-item"><button class="btn btn-outline-light" id="logoutBtn" style="display: none;">Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="login-container">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title text-center">Login</h3>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <select class="form-select" id="role" required>
+                            <option value="">Select Role</option>
+                            <option value="teacher">Teacher/Admin</option>
+                            <option value="parent">Parent/Guardian</option>
+                            <option value="student">Student/Pupil</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Sections -->
+    <div id="dashboard" class="container mt-5 dashboard">
+        <h2 id="welcomeMsg" class="mb-4"></h2>
+        
+        <!-- Teacher/Admin Dashboard -->
+        <div id="teacherDashboard" class="dashboard-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Fees Management</div>
+                        <div class="card-body">
+                            <p>View and manage student fees.</p>
+                            <!-- Placeholder for fees table or form -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Grade Books</div>
+                        <div class="card-body">
+                            <p>Enter and view student grades and results.</p>
+                            <!-- Placeholder for grade input -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">School Information</div>
+                        <div class="card-body">
+                            <p>Access school-related information.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Lesson Plans & Resources</div>
+                        <div class="card-body">
+                            <p>Upload and view lesson plans.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Staff Directory</div>
+                        <div class="card-body">
+                            <p>Contact information for staff.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Professional Development</div>
+                        <div class="card-body">
+                            <p>Opportunities for training.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card section-card">
+                        <div class="card-header">School Policies</div>
+                        <div class="card-body">
+                            <p>View policies and procedures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parent Dashboard -->
+        <div id="parentDashboard" class="dashboard-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Student Results & Progress</div>
+                        <div class="card-body">
+                            <p>View term progress and results.</p>
+                            <!-- Placeholder for charts or tables -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Complaints & Feedback</div>
+                        <div class="card-body">
+                            <p>See and submit complaints.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">School News</div>
+                        <div class="card-body">
+                            <p>Latest announcements.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">PTA Info</div>
+                        <div class="card-body">
+                            <p>Parent-Teacher Association details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Parenting Resources</div>
+                        <div class="card-body">
+                            <p>Tips and resources for parents.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">School Policies</div>
+                        <div class="card-body">
+                            <p>View policies and procedures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Dashboard -->
+        <div id="studentDashboard" class="dashboard-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Timetables</div>
+                        <div class="card-body">
+                            <p>View class schedules.</p>
+                            <!-- Placeholder for timetable -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Access Books & Resources</div>
+                        <div class="card-body">
+                            <p>Download or view textbooks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Homework Assignments</div>
+                        <div class="card-body">
+                            <p>View deadlines and tasks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">School Calendar</div>
+                        <div class="card-body">
+                            <p>Events and holidays.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Student Clubs</div>
+                        <div class="card-body">
+                            <p>Join activities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card section-card">
+                        <div class="card-header">Online Learning</div>
+                        <div class="card-body">
+                            <p>Access resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- General Sections -->
+    <div class="container mt-5" id="generalSections">
+        <section id="history" class="mb-5">
+            <h2>School History & Mission</h2>
+            <p>Our school was founded in [Year] with the mission to provide quality education...</p>
+        </section>
+        <section id="contact" class="mb-5">
+            <h2>Contact Information & Map</h2>
+            <p>Address: [School Address]</p>
+            <p>Phone: [Phone Number]</p>
+            <!-- Placeholder for map embed -->
+        </section>
+        <section id="faq" class="mb-5">
+            <h2>FAQs & Support</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Question 1</button></h2>
+                    <div id="faq1" class="accordion-collapse collapse"><div class="accordion-body">Answer 1</div></div>
+                </div>
+                <!-- Add more FAQs -->
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginSection = document.getElementById('loginSection');
+        const dashboard = document.getElementById('dashboard');
+        const welcomeMsg = document.getElementById('welcomeMsg');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const teacherDashboard = document.getElementById('teacherDashboard');
+        const parentDashboard = document.getElementById('parentDashboard');
+        const studentDashboard = document.getElementById('studentDashboard');
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const role = document.getElementById('role').value;
+
+            if (username && role) {
+                loginSection.style.display = 'none';
+                dashboard.style.display = 'block';
+                logoutBtn.style.display = 'block';
+                welcomeMsg.textContent = `Welcome, ${username} (${role.charAt(0).toUpperCase() + role.slice(1)})`;
+
+                // Show relevant dashboard
+                teacherDashboard.style.display = role === 'teacher' ? 'block' : 'none';
+                parentDashboard.style.display = role === 'parent' ? 'block' : 'none';
+                studentDashboard.style.display = role === 'student' ? 'block' : 'none';
+            }
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            loginSection.style.display = 'block';
+            dashboard.style.display = 'none';
+            logoutBtn.style.display = 'none';
+            loginForm.reset();
+            teacherDashboard.style.display = 'none';
+            parentDashboard.style.display = 'none';
+            studentDashboard.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

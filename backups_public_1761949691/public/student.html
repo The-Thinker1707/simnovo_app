@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Student Dashboard</title><link rel="stylesheet" href="/styles.css"></head><body>
+  <div class="container">
+    <header class="header"><div class="brand"><div class="logo">EDU</div><div><div style="font-weight:800">EduConnect</div><div style="font-size:12px;color:#556074">Student</div></div></div><nav class="top-nav"><a href="/portal.html">Portal</a><a href="/auth/logout" class="cta">Logout</a></nav></header>
+
+    <div class="grid">
+      <div class="card">
+        <div class="profile"><div class="avatar" id="s-avatar"><img id="s-avatar-img" src="/assets/avatar-placeholder.png"></div><div><h3 id="s-name"></h3><small id="s-email" class="note"></small></div></div>
+        <p id="s-info" style="color:#556074"></p>
+      </div>
+
+      <div class="card">
+        <h3>Timetable</h3>
+        <ul id="timetable" style="color:#556074"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Homework</h3>
+        <ul id="homework" style="color:#556074"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Clubs & Activities</h3>
+        <p style="color:#556074">No data yet (demo).</p>
+      </div>
+
+      <div class="card">
+        <h3>Reflections</h3>
+        <form id="reflect-form">
+          <textarea name="ref" rows="4" placeholder="Describe strengths & weaknesses"></textarea>
+          <button type="submit">Save Reflection</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Edit Profile</h3>
+        <form id="profile-form" enctype="multipart/form-data">
+          <input name="name" placeholder="Full name" required>
+          <input name="phone" placeholder="Phone">
+          <input type="file" name="photo" accept="image/*">
+          <button type="submit">Update Profile</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+async function api(path, opts){ const r = await fetch(path, opts); if(r.status===401){ location.href='/portal.html'; return; } return r.json(); }
+async function load(){
+  const p = await api('/api/profile'); if(!p) return;
+  document.getElementById('s-name').textContent = p.user.name; document.getElementById('s-email').textContent = p.user.email; if(p.user.photo) document.getElementById('s-avatar-img').src = p.user.photo;
+  const d = await api('/api/student/dashboard'); document.getElementById('timetable').innerHTML = (d.timetable||[]).map(t=>`<li>${t.day} ${t.time} — ${t.subject}</li>`).join(''); document.getElementById('homework').innerHTML = (d.homework||[]).map(h=>`<li>${h.title} — due ${h.due}</li>`).join('');
+  document.getElementById('reflect-form').onsubmit = async e=>{ e.preventDefault(); const text = e.target.elements['ref'].value; await fetch('/api/student/reflection',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})}); alert('Saved'); e.target.reset(); };
+  document.getElementById('profile-form').onsubmit = async e=>{ e.preventDefault(); const f = new FormData(e.target); await fetch('/api/profile',{method:'POST',body:f}); alert('Updated'); load(); };
+}
+load();
+</script>
+</body></html>

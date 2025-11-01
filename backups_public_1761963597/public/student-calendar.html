@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Calendar - EduConnect</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>School Calendar & Events</h1>
+  <div id="datetime"></div>
+</header>
+
+<section class="section content">
+  <ul>
+    <li>Term 2 starts: 10th Nov 2025</li>
+    <li>Sports Day: 20th Dec 2025</li>
+    <li>Exams: 1st Dec - 10th Dec 2025</li>
+    <li>Holiday: 25th Dec 2025</li>
+  </ul>
+</section>
+
+<a class="back-button" href="student-dashboard.html">Back</a>
+<footer>© EduConnect 2025</footer>
+
+<script>
+function updateDateTime() {
+  document.getElementById("datetime").innerText = new Date().toLocaleString();
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+</body>
+</html>

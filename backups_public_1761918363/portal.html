@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Portal — EduConnect</title>
+<link rel="stylesheet" href="/styles.css">
+<style>
+.container{max-width:980px;margin:18px auto;padding:12px}
+.roles{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.role-card{width:280px;background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);cursor:pointer;text-align:center}
+.role-card h3{margin:6px 0}
+.role-card p{color:var(--muted);font-size:13px}
+</style>
+</head><body>
+  <div class="app container">
+    <header style="display:flex;justify-content:space-between;align-items:center">
+      <div class="brand"><div class="logo">EC</div><div style="display:inline-block;margin-left:10px"><div class="h1">Portal</div><div class="h2">Choose your role</div></div></div>
+      <nav><a class="back-button" href="/index.html">Home</a></nav>
+    </header>
+
+    <main style="margin-top:18px">
+      <div class="roles">
+        <div class="role-card" onclick="location.href='/teacher-login.html'">
+          <h3>Teacher / Admin</h3>
+          <p>Lesson plans, class info, results, fees</p>
+        </div>
+        <div class="role-card" onclick="location.href='/parent-login.html'">
+          <h3>Parent / Guardian</h3>
+          <p>Child progress, announcements, fees</p>
+        </div>
+        <div class="role-card" onclick="location.href='/student-login.html'">
+          <h3>Student / Pupil</h3>
+          <p>Timetable, homework, resources</p>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="card">
+        <h4>How it works</h4>
+        <p class="small">Click one of the role cards above to open a login page specific to that role. After login you'll be taken to a role-specific dashboard.</p>
+      </div>
+
+      <div style="margin-top:18px" class="footer">© EduConnect 2025</div>
+    </main>
+  </div>
+</body></html>

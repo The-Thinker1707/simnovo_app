@@ -1,0 +1,62 @@
+/**
+ * EduConnect - simplified demo server
+ * Serves static files from ./public
+ * POST /api/auth/login  -> { token, role, name }
+ * GET  /api/results/student/:id -> sample result set
+ *
+ * This is friendly demo code (not for production).
+ */
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.json());
+app.use(express.static('public'));
+
+const PORT = process.env.PORT || 3000;
+
+// In-memory demo users (plain text for demo)
+const users = [
+  { id:1, email:'admin@example.com', password:'admin123', role:'admin', name:'School Admin' },
+  { id:2, email:'teacher@example.com', password:'teach123', role:'teacher', name:'Ms Teacher' },
+  { id:3, email:'parent@example.com', password:'parent123', role:'parent', name:'Parent One' },
+  { id:4, email:'student@example.com', password:'student123', role:'student', name:'Pupil One' }
+];
+
+// simple token generator (demo only)
+function makeToken(user){ return 'demo-token-'+user.role+'-'+user.id+'-'+Date.now(); }
+
+// login endpoint (accepts JSON email+password)
+app.post('/api/auth/login', (req, res) => {
+  const { email, password } = req.body || {};
+  if (!email || !password) return res.status(400).json({ error:'email & password required' });
+  const user = users.find(u=>u.email===email && u.password===password);
+  if (!user) return res.status(401).json({ error:'Invalid credentials' });
+  const token = makeToken(user);
+  return res.json({ token, role: user.role, name: user.name });
+});
+
+// sample results API (student results)
+app.get('/api/results/student/:id', (req, res) => {
+  const studentId = Number(req.params.id) || 1;
+  // Sample term-by-term scores (for chart & table)
+  const results = [
+    { term: '2024_Term3', subject: 'Mathematics', score: 78, max_score:100 },
+    { term: '2025_Term1', subject: 'Mathematics', score: 82, max_score:100 },
+    { term: '2025_Term2', subject: 'Mathematics', score: 88, max_score:100 },
+    { term: '2025_Term3', subject: 'Mathematics', score: 91, max_score:100 }
+  ];
+  // Also return per-subject aggregated sample
+  const summary = [
+    { subject: 'Mathematics', avg: 84.75 },
+    { subject: 'English', avg: 79.0 },
+    { subject: 'Science', avg: 86.0 }
+  ];
+  res.json({ student_id: studentId, results, summary, student_name: 'Pupil One' });
+});
+
+// small helper route to check server
+app.get('/healthz', (req,res)=>res.json({ ok:true, server: 'EduConnect demo' }));
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`EduConnect server running on :${PORT}`);
+});

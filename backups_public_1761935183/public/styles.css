@@ -1,0 +1,81 @@
+/* EduConnect — final polished stylesheet (vibrant yet professional) */
+:root{
+  --bg:#f6fbff;
+  --panel:#ffffff;
+  --muted:#556b73;
+  --text:#06222b;
+  --accent-1:#0b76d1; /* royal blue */
+  --accent-2:#7c5cff; /* violet */
+  --accent-3:#ffb020; /* gold */
+  --accent-4:#06b6d4; /* teal */
+  --radius:14px;
+  --card-shadow: 0 22px 50px rgba(9,30,40,0.08);
+  --soft-shadow: 0 8px 28px rgba(9,30,40,0.04);
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  --max-width:1240px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:var(--font);background:linear-gradient(180deg,#fbfdff 0%,var(--bg)100%);color:var(--text);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.45;
+}
+.container{max-width:var(--max-width);margin:36px auto;padding:22px}
+
+/* header */
+.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent-2),var(--accent-1));color:white;font-weight:900;box-shadow:var(--card-shadow)}
+.top-nav{display:flex;gap:10px;align-items:center}
+.top-nav a{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:800;font-size:13px}
+.top-nav a.cta{background:linear-gradient(90deg,var(--accent-1),#09a1de);color:white;box-shadow:0 12px 28px rgba(11,118,209,0.12)}
+
+/* HERO CARD — digital gradient */
+.hero-card{
+  border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow);
+  display:flex;align-items:stretch;gap:0;background:linear-gradient(135deg,#0b76d1 0%, #7c5cff 55%, #06b6d4 100%);
+  color:white;
+}
+.hero-inner{padding:36px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.hero-text{font-size:28px;font-weight:900;margin:0;letter-spacing:-0.3px}
+.hero-subcard{background:rgba(255,255,255,0.06);padding:16px;border-radius:12px;max-width:760px;border:1px solid rgba(255,255,255,0.06)}
+.hero-actions{display:flex;gap:12px;align-items:center}
+.hero-btn{padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,#ffffff22,rgba(255,255,255,0.12));color:white;border:1px solid rgba(255,255,255,0.08);font-weight:800;cursor:pointer}
+
+/* Quick actions */
+.quick-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.quick-card{background:var(--panel);border-radius:12px;padding:14px;box-shadow:var(--soft-shadow);display:flex;flex-direction:column;gap:8px;border:1px solid rgba(9,30,40,0.03);cursor:pointer;transition:transform .18s, box-shadow .18s}
+.quick-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(9,30,40,0.06)}
+.quick-card h4{margin:0;font-weight:900}
+.quick-card p{margin:0;color:var(--muted);font-size:13px}
+
+/* portal login card */
+.login-wrap{max-width:760px;margin:28px auto}
+.login-card{background:var(--panel);border-radius:12px;padding:18px;box-shadow:var(--card-shadow);border:1px solid rgba(9,30,40,0.04)}
+.login-head{display:flex;justify-content:space-between;align-items:center}
+.login-fields{display:grid;gap:8px;margin-top:12px}
+
+/* role cards on portal */
+.role-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.role-card{border-radius:12px;padding:16px;color:white;min-height:140px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:transform .18s}
+.role-card:hover{transform:translateY(-8px)}
+.role-card.teacher{background:linear-gradient(135deg,var(--accent-1),#6b4bff)}
+.role-card.parent{background:linear-gradient(135deg,#06b6d4,#22c55e)}
+.role-card.student{background:linear-gradient(135deg,#ffb020,#ff6b6b)}
+.role-card .r-title{font-weight:900;font-size:16px}
+.role-card .r-desc{color:rgba(255,255,255,0.95);font-size:13px}
+
+/* dashboard feature grid + clickable cards */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
+.card{background:var(--panel);border-radius:12px;padding:16px;box-shadow:var(--soft-shadow);display:flex;flex-direction:column;gap:10px;border:1px solid rgba(9,30,40,0.03);cursor:pointer;transition:transform .18s}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(9,30,40,0.06)}
+.card h4{margin:0;font-weight:900}
+.card p{margin:0;color:var(--muted);font-size:13px}
+
+/* subtle reveal animation */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s}
+.reveal.visible{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:1100px){ .features{grid-template-columns:repeat(2,1fr)} .quick-row{grid-template-columns:repeat(2,1fr)} .role-cards{grid-template-columns:1fr} .hero-text{font-size:22px} }
+@media (max-width:720px){ .features{grid-template-columns:1fr} .quick-row{grid-template-columns:1fr} .hero-inner{padding:20px} .hero-text{font-size:20px} }

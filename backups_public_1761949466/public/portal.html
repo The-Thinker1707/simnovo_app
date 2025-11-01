@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>EduConnect — Login</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card" role="main" aria-labelledby="login-title">
+      <h2 id="login-title" style="margin:0 0 6px 0">Portal login</h2>
+      <p style="margin:0 0 12px;color:var(--muted)">Choose your role and sign in to access your area.</p>
+
+      <div class="role-select" role="tablist" aria-label="Choose role">
+        <button id="r-teacher" class="active" type="button" onclick="selectRole('teacher')">Teacher</button>
+        <button id="r-parent" type="button" onclick="selectRole('parent')">Parent</button>
+        <button id="r-student" type="button" onclick="selectRole('student')">Student</button>
+      </div>
+
+      <form id="login-form" action="/auth/login" method="POST" style="margin-top:8px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <input name="email" type="email" placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid #eee">
+          <input name="password" type="password" placeholder="Password" required style="padding:10px;border-radius:8px;border:1px solid #eee">
+          <input type="hidden" name="role" id="role-field" value="teacher">
+          <button type="submit" class="cta-btn" style="width:100%">Login</button>
+        </div>
+      </form>
+
+      <div style="margin-top:12px;color:var(--muted);font-size:13px">Demo — teacher@example.com / teach123 · parent@example.com / parent123 · student@example.com / student123</div>
+    </div>
+  </div>
+
+  <script>
+    function selectRole(role){
+      document.getElementById('role-field').value = role;
+      ['teacher','parent','student'].forEach(r=>{
+        const btn = document.getElementById('r-'+r);
+        if(btn) btn.classList.toggle('active', r===role);
+      });
+    }
+  </script>
+</body>
+</html>

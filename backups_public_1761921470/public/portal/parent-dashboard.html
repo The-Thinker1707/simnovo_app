@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parent Dashboard</title><style>body{background:#f4f6f8;font-family:Arial;margin:0;color:#07202b}.container{max-width:1100px;margin:18px auto;padding:16px}.header{display:flex;justify-content:space-between;align-items:center}.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}.card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(10,20,30,0.06)}a.back{display:inline-block;text-decoration:none;color:#0a2540}button{padding:10px 14px;border-radius:8px;border:0;background:#0a2540;color:#fff}</style></head><body>
+<div class="container">
+  <a class="back" href="/index.html">← Home</a>
+  <div class="header"><h2>Parent Dashboard</h2><div id="now"></div></div>
+  <div class="card-grid">
+    <div class="card"><h3>Child Progress</h3><p>View term results and progress.</p></div>
+    <div class="card"><h3>Announcements</h3><p>School news and PTA info.</p></div>
+    <div class="card"><h3>Fees</h3><p>View and pay school fees.</p></div>
+    <div class="card"><h3>Complaints</h3><p>Raise or review complaints.</p></div>
+  </div>
+  <div style="margin-top:22px"><button id="logout">Logout</button></div>
+</div>
+<script>document.getElementById('now').textContent = new Date().toLocaleString(); document.getElementById('logout').addEventListener('click', ()=>{ localStorage.removeItem('edu_token'); location.href='/portal/parent.html' });</script>
+</body></html>

@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Student Dashboard — EduConnect</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/student.css">
+</head><body>
+<div class="app">
+  <header class="header"><div class="brand"><div class="logo" style="background:linear-gradient(135deg,#0b76d1,#6fb3ff)">S</div><div><div class="h1">Student Dashboard</div><div class="h2 small">Pupil view</div></div></div><nav style="gap:8px"><a class="back-button nav-back" href="#">Back</a> <a class="back-button" href="/index.html">Home</a></nav></header>
+
+  <section style="margin-top:12px">
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="card" href="/student-home.html" style="min-width:220px;text-decoration:none;color:inherit"><h4 style="margin:0">Timetable</h4><p class="small">Daily timetable</p></a>
+      <a class="card" href="/student-homework.html" style="min-width:220px;text-decoration:none;color:inherit"><h4 style="margin:0">Homework</h4><p class="small">Assignments & deadlines</p></a>
+      <a class="card" href="/student-clubs.html" style="min-width:220px;text-decoration:none;color:inherit"><h4 style="margin:0">Clubs</h4><p class="small">Join activities</p></a>
+      <a class="card" href="/student-calendar.html" style="min-width:220px;text-decoration:none;color:inherit"><h4 style="margin:0">Calendar</h4><p class="small">School events</p></a>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3 style="margin:0">Profile</h3>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:8px">
+        <img id="student-photo" src="/student-home.html" alt="photo" style="width:72px;height:72px;border-radius:10px;object-fit:cover">
+        <div style="flex:1"><div style="font-weight:700">Pupil One</div><div class="small">Admission: ADM001</div>
+          <input class="input profile-upload" data-preview="#student-photo" type="file" accept="image/*" style="margin-top:8px">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer card" style="margin-top:12px">© EduConnect 2025</footer>
+</div>
+
+<script src="/dashboard-common.js" defer></script>
+</body></html>

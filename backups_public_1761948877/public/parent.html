@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Parent — EduConnect</title><link rel="stylesheet" href="/styles.css"/></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><div class="logo">EDUCONNECT</div></div><nav class="top-nav"><a href="/auth/logout">Logout</a></nav></header>
+
+    <h2 style="margin:0 0 10px 0;font-weight:900">Parent / Guardian</h2>
+    <p style="margin:0 0 18px 0;color:var(--muted)">View your child's progress, fees, announcements and communicate with teachers.</p>
+
+    <div class="features">
+      <div class="card"><h4>Progress & Results</h4><p>See term-wise performance, grades and teacher feedback.</p></div>
+      <div class="card"><h4>Fees & Payment Status</h4><p>Check outstanding fees, receipts and payment references.</p></div>
+      <div class="card"><h4>Complaints & Feedback</h4><p>Submit complaints or suggestions and track responses.</p></div>
+      <div class="card"><h4>School News & Announcements</h4><p>Latest notices from the school and upcoming events.</p></div>
+      <div class="card"><h4>PTA Information</h4><p>Parent-Teacher Association meetings, minutes and contact points.</p></div>
+      <div class="card"><h4>Parenting Resources</h4><p>Guides, tips and resources for supporting your child's learning.</p></div>
+      <div class="card"><h4>School Policies</h4><p>Access school policies and procedures relevant to students and parents.</p></div>
+      <div class="card"><h4>Contact & Support</h4><p>Contact school offices, map and helpdesk information.</p></div>
+    </div>
+
+    <footer style="margin-top:28px;color:var(--muted);font-size:13px">Tip: Use 'Complaints & Feedback' to send non-urgent requests to school administration.</footer>
+  </div>
+
+<script>
+async function loadParentDashboard(){
+  try{
+    const r = await fetch('/api/parent/dashboard');
+    if(r.ok){
+      const d = await r.json();
+      // we could populate a Results card or announcements if needed
+    }
+  }catch(e){}
+}
+document.addEventListener('DOMContentLoaded', loadParentDashboard);
+</script>
+</body>
+</html>

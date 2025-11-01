@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>EduConnect — Portal</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<div class="container">
+<header class="header"><div class="brand"><div class="logo">EDUCONNECT</div></div><nav class="top-nav"><a href="#features">Features</a><a class="cta" href="/portal.html">Portal Login</a></nav></header>
+
+<section class="hero-wrap"><div class="hero-card">
+<div style="flex:1"><h1 class="h-title">Welcome to EduConnect</h1><p class="h-lead">A vibrant, professional portal for administration, teachers, parents and students. Click any card to explore or sign in to access dashboards.</p>
+<div class="search-box"><input id="search" placeholder="Search features, policies or resources..." /><button id="search-btn">Search</button></div>
+<div class="hero-ctas"><a href="/portal.html"><button class="btn primary">Open Portal</button></a><a href="#features"><button class="btn alt">Browse features</button></a></div>
+</div>
+<div class="hero-stats"><div class="stat"><div class="num">1,250+</div><div class="label">Active users</div></div><div class="stat"><div class="num">3</div><div class="label">User Faces</div></div><div class="stat"><div class="num">48</div><div class="label">Departments</div></div>
+</div></div></section>
+
+<section id="features" style="margin-top:20px"><h2 style="margin:0 0 12px 0">Features</h2>
+<div class="features">
+<a class="card-link" href="/teacher.html"><div class="feature-card f-teacher"><div class="k">Teacher / Admin</div><div style="font-weight:600">Results • Lesson plans</div><div style="font-weight:400;font-size:13px;margin-top:auto">Enter marks, manage fees, staff directory, lesson plans, policies & professional development.</div></div></a>
+<a class="card-link" href="/parent.html"><div class="feature-card f-parent"><div class="k">Parents</div><div style="font-weight:600">Progress • Complaints</div><div style="font-weight:400;font-size:13px;margin-top:auto">View term results, send suggestions, follow PTA, access news & parenting resources.</div></div></a>
+<a class="card-link" href="/student.html"><div class="feature-card f-student"><div class="k">Students</div><div style="font-weight:600">Timetables • Homework</div><div style="font-weight:400;font-size:13px;margin-top:auto">Access timetables, assignments, clubs, resources and reflections.</div></div></a>
+<a class="card-link" href="/portal.html"><div class="feature-card f-library"><div class="k">Library</div><div style="font-weight:600">Digital Books</div><div style="font-weight:400;font-size:13px;margin-top:auto">Search & borrow e-textbooks and resources.</div></div></a>
+<a class="card-link" href="#events"><div class="feature-card f-events"><div class="k">Events</div><div style="font-weight:600">Calendar & Clubs</div><div style="font-weight:400;font-size:13px;margin-top:auto">Sign up for clubs and events.</div></div></a>
+<a class="card-link" href="#analytics"><div class="feature-card f-analytics"><div class="k">Reports</div><div style="font-weight:400;font-size:13px;margin-top:auto">Attendance, grades & financial insights.</div></div></a>
+<a class="card-link" href="#contacts"><div class="feature-card f-contacts"><div class="k">Contacts</div><div style="font-weight:400;font-size:13px;margin-top:auto">Quick connect to departments and support.</div></div></a>
+<a class="card-link" href="#more"><div class="feature-card f-more"><div class="k">More</div><div style="font-weight:400;font-size:13px;margin-top:auto">Policies, FAQs & school mission.</div></div></a>
+</div></section>
+
+<section style="margin-top:20px" class="promo">
+<div class="panel card"><h3>Next Open Day</h3><p class="note">Join department tours on Saturday, Nov 8. Register via the Portal.</p></div>
+<div class="panel card"><h3>Latest Announcements</h3><ul style="margin:0;padding-left:18px;color:var(--muted)"><li>Term reports published next Friday.</li><li>PTA meeting Friday at 3pm.</li></ul></div>
+</section>
+
+<footer class="footer"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div>© EduConnect Prototype 2025</div><div class="note">Demo UI — click cards to explore</div></div></footer>
+
+</div>
+<script>(function(){const searchInput=document.getElementById('search'),searchBtn=document.getElementById('search-btn');function run(){const q=(searchInput.value||'').toLowerCase().trim();document.querySelectorAll('.feature-card').forEach(c=>{c.classList.toggle('dim',q&&c.textContent.toLowerCase().indexOf(q)===-1);});}searchBtn.addEventListener('click',run);searchInput.addEventListener('keydown',(e)=>{if(e.key==='Enter'){e.preventDefault();run();}});})();</script>
+</body>
+</html>

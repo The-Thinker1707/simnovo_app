@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Student Dashboard — EduConnect</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/student.css">
+</head><body>
+<div class="app">
+  <header class="header"><div class="brand"><div class="logo" style="background:linear-gradient(135deg,#0b76d1,#6fb3ff)">S</div><div><div class="h1">Student Dashboard</div><div class="h2 small">Pupil view</div></div></div><nav style="gap:8px"><a class="back-button nav-back" href="#">Back</a></nav></header>
+
+  <section style="margin-top:12px">
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <div class="card" data-target="#s-panel-timetable" style="cursor:pointer;min-width:220px">
+        <h4 style="margin:0">Timetable</h4><p class="small">View your daily timetable</p>
+      </div>
+      <div class="card" data-target="#s-panel-homework" style="cursor:pointer;min-width:220px">
+        <h4 style="margin:0">Homework</h4><p class="small">Open assignments and deadlines</p>
+      </div>
+      <div class="card" data-target="#s-panel-books" style="cursor:pointer;min-width:220px">
+        <h4 style="margin:0">E-books & resources</h4><p class="small">Open learning materials</p>
+      </div>
+      <div class="card" data-target="#s-panel-clubs" style="cursor:pointer;min-width:220px">
+        <h4 style="margin:0">Clubs & Activities</h4><p class="small">Join groups and clubs</p>
+      </div>
+    </div>
+
+    <div id="s-panel-timetable" class="panel card" style="display:none;margin-top:12px">
+      <h3 style="margin:0">Daily Timetable</h3>
+      <table style="width:100%;margin-top:8px"><tr><th class="small">Time</th><th class="small">Subject</th></tr><tr><td class="small">08:00</td><td class="small">Mathematics</td></tr><tr><td class="small">09:00</td><td class="small">English</td></tr></table>
+    </div>
+
+    <div id="s-panel-homework" class="panel card" style="display:none;margin-top:12px">
+      <h3 style="margin:0">Homework</h3>
+      <ul class="small"><li>Math: Exercise 4 — due 2025-11-10</li></ul>
+    </div>
+
+    <div id="s-panel-books" class="panel card" style="display:none;margin-top:12px">
+      <h3 style="margin:0">E-books</h3>
+      <p class="small">Open library resources (demo).</p>
+    </div>
+
+    <div id="s-panel-clubs" class="panel card" style="display:none;margin-top:12px">
+      <h3 style="margin:0">Clubs</h3><p class="small">Drama club, Science club and Football team.</p>
+    </div>
+
+    <!-- profile at bottom -->
+    <div class="card" style="margin-top:12px;display:flex;align-items:center;gap:12px">
+      <img id="student-photo" src="/student-home.html" alt="photo" style="width:72px;height:72px;border-radius:10px;object-fit:cover">
+      <div style="flex:1">
+        <div style="font-weight:700">Pupil One</div>
+        <div class="small">Admission: ADM001</div>
+        <input class="input profile-upload" data-preview="#student-photo" type="file" accept="image/*" style="margin-top:8px">
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer card" style="margin-top:12px">© EduConnect 2025</footer>
+</div>
+
+<script src="/dashboard-common.js" defer></script>
+</body></html>

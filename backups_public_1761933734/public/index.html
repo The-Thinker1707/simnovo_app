@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>EduConnect — Professional school portal</title><link rel="stylesheet" href="/styles.css"/></head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">EDUCONNECT</div>
+        <div style="line-height:1">
+          <div style="font-weight:900">EduConnect</div>
+          <div style="font-size:13px;color:var(--muted)">A unified digital experience for Teachers, Parents & Pupils</div>
+        </div>
+      </div>
+      <nav class="top-nav"><a href="/portal.html" class="cta">Portal Login</a></nav>
+    </header>
+
+    <!-- HERO: horizontal card with background image on right -->
+    <section class="hero-outer reveal" aria-labelledby="hero-h">
+      <div class="hero-left">
+        <h2 id="hero-h" class="hero-title">A unified digital experience for Teachers, Parents & Pupils</h2>
+        <p class="hero-sub">EduConnect brings together lessons, timetables, assessments, fees and communication in a single secure portal — designed for schools of all sizes.</p>
+
+        <div class="role-row">
+          <a href="/portal.html" class="role-btn">Open Portal</a>
+          <a href="/portal.html" class="role-btn">Sign in</a>
+          <a class="role-btn demo" href="/portal.html">Choose Role</a>
+        </div>
+      </div>
+      <div class="hero-right" style="background-image:url('/assets/hero-school.jpg');"></div>
+    </section>
+
+    <!-- Quick features row -->
+    <h3 class="section-title">Quick actions</h3>
+    <div class="features" role="list">
+      <div class="card reveal"><h4>Announcements</h4><p>Latest news and important messages for the school community.</p></div>
+      <div class="card reveal"><h4>Timetables</h4><p>Access class schedules, exam timetables and room allocations.</p></div>
+      <div class="card reveal"><h4>Library</h4><p>Search digital books, resources and reading lists.</p></div>
+      <div class="card reveal"><h4>Support</h4><p>Help center, FAQs and contact details.</p></div>
+    </div>
+
+    <footer style="margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between">
+      <div>© EduConnect • 2025</div>
+      <div style="color:var(--muted)">Built for schools — teacher, parent & pupil focused</div>
+    </footer>
+  </div>
+
+  <script>
+    // reveal on scroll
+    const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }) }, {threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

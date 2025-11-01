@@ -1,0 +1,19 @@
+{
+  "users":[
+    {"id":"u-teacher","email":"teacher@example.com","password":"teach123","role":"teacher","name":"Ms. Ada Teacher","phone":"","photo":""},
+    {"id":"u-parent","email":"parent@example.com","password":"parent123","role":"parent","name":"Mr. Parent","phone":"","photo":"","childId":"s-1"},
+    {"id":"u-student","email":"student@example.com","password":"student123","role":"student","name":"John Student","phone":"","photo":"","studentId":"s-1"}
+  ],
+  "announcements":[
+    {"id":"a1","title":"Welcome to Term 3","body":"Term 3 begins Monday. Check your timetable."}
+  ],
+  "lessons":[],
+  "staff":[],
+  "timetables":{"s-1":[{"day":"Monday","time":"08:00 - 09:00","subject":"Mathematics"}]},
+  "homework":{"s-1":[{"id":"hw1","title":"Algebra worksheet","due":"2025-11-07"}]},
+  "results":{},
+  "complaints":[],
+  "fees":[{"studentId":"s-1","term":"Term 3 2025","amount":120,"status":"unpaid"}],
+  "profiles":{},
+  "results_list": []
+}

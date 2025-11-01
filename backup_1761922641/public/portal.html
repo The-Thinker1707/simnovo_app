@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Portal Login</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">EDUCONNECT</div><div><div style="font-weight:800">EduConnect</div><div style="font-size:12px;color:#556074">Sign in to your area</div></div></div>
+    </header>
+
+    <div class="card" style="max-width:520px;margin:0 auto">
+      <h2 style="margin:0 0 8px 0">Portal Login</h2>
+      <p style="margin:0 0 12px;color:#556074">Choose role and sign in. For demo, use the sample accounts shown on the homepage.</p>
+
+      <form id="loginForm" action="/auth/login" method="POST" style="display:grid;gap:8px">
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <select name="role" required>
+          <option value="teacher">Teacher / Admin</option>
+          <option value="parent">Parent / Guardian</option>
+          <option value="student">Student / Pupil</option>
+        </select>
+        <button type="submit">Login</button>
+      </form>
+
+      <div style="margin-top:12px;color:#556074;font-size:13px">Demo accounts available on the homepage.</div>
+    </div>
+
+    <footer style="margin-top:18px;text-align:center;color:#556074">© EduConnect Prototype</footer>
+  </div>
+</body>
+</html>
